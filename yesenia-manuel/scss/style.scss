@@ -1,0 +1,1382 @@
+/******* Bootstrap Theming ********/
+
+$primary: #b86461;
+$secondary: #4B5C49;
+$tertiary: #394937;
+$light: #F9ECDE;
+$dark: #b86461;
+$resalt: #4b596d;
+$white: #ffffff;
+$color-background: #F1E0CB;
+
+$font-family-sans-serif: 'Montserrat', sans-serif;
+$headings-font-weight: 400;
+$body-bg: $white;
+$body-color: #6c757d;
+$headings-color: $dark;
+$headings-font-weight: 600;
+$enable-responsive-font-sizes: true;
+$enable-rounded: false;
+$border-width: 1px;
+
+@import "bootstrap/scss/bootstrap";
+
+@font-face {
+    font-family: 'MeowScript';
+    src: url('../fonts/MeowScript-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Minion';
+    src: url('../fonts/MinionVariableConcept-Roman.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/********** Template CSS ************/
+.font-secondary {
+    font-family: 'MeowScript';
+}
+
+.btn-square {
+    width: 40px;
+    height: 40px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 50px;
+    height: 50px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding-left: 0;
+    padding-right: 0;
+    text-align: center;
+}
+
+.scroll-to-bottom {
+    position: fixed;
+    width: 20px;
+    left: calc(50% - 10px);
+    bottom: 30px;
+    z-index: 11;
+    -webkit-animation: action 1s infinite alternate;
+    animation: action 1s infinite alternate;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    text-align: center;
+    right: 30px;
+    bottom: 30px;
+    z-index: 11;
+    -webkit-animation: action 1s infinite alternate;
+    animation: action 1s infinite alternate;
+}
+
+@-webkit-keyframes action {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes action {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-15px);
+    }
+}
+
+.navbar-dark {
+    display: none;
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    padding: 25px 10px;
+    color: $light;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+    outline: none;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    color: $secondary;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-dark .navbar-nav .nav-link {
+        padding: 10px 0;
+    }
+}
+
+.carousel-caption {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, .6);
+    z-index: 1;
+}
+
+.section-title {
+    margin-bottom: 30px;
+}
+
+.section-title::before {
+    position: absolute;
+    content: "";
+    width: 90px;
+    height: 1.5px;
+    bottom: 11px;
+    left: calc(50% - 110px);
+    background: $secondary;
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: 90px;
+    height: 1.5px;
+    bottom: 11px;
+    right: calc(50% - 110px);
+    background: $secondary;
+}
+
+.btn-play {
+    position: relative;
+    margin-top: 50px;
+    display: block;
+    box-sizing: content-box;
+    width: 16px;
+    height: 26px;
+    border-radius: 100%;
+    border: none;
+    outline: none !important;
+    padding: 18px 20px 20px 28px;
+    background: $light;
+}
+
+
+.btn-play:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: $light;
+    border-radius: 100%;
+    transition: all 200ms;
+}
+
+.btn-play span {
+    display: block;
+    position: relative;
+    z-index: 3;
+    width: 0;
+    height: 0;
+    left: -1px;
+    border-left: 16px solid $primary;
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+}
+
+// @keyframes pulse-border {
+//     0% {
+//         transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+//         opacity: 1;
+//     }
+
+//     100% {
+//         transform: translateX(-50%) translateY(-50%) translateZ(0) scale(2);
+//         opacity: 0;
+//     }
+// }
+
+#videoModal .modal-dialog {
+    position: relative;
+    max-width: 800px;
+    margin: 60px auto 0 auto;
+}
+
+#videoModal .modal-body {
+    position: relative;
+    padding: 0px;
+}
+
+#videoModal .close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 0px;
+    top: -30px;
+    z-index: 999;
+    font-size: 30px;
+    font-weight: normal;
+    color: #ffffff;
+    background: #000000;
+    opacity: 1;
+}
+
+.timeline .row {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+@keyframes latido {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.2);
+    }
+
+    50% {
+        transform: scale(0.95);
+    }
+
+    75% {
+        transform: scale(1.1);
+    }
+}
+
+.heart-beat {
+    animation: latido 1.2s infinite;
+    transform-origin: center;
+    display: inline-block;
+    color: $secondary;
+}
+
+@media (min-width: 220px) {
+    .timeline::after {
+        position: absolute;
+        content: "";
+        width: 2px;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        margin-left: -1px;
+        background: $primary;
+    }
+
+    .timeline .row::before {
+        content: "";
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        top: calc(50% - 15px);
+        left: calc(50% - 15px);
+        background: $light;
+        border: 2px solid $primary;
+        transform: rotate(45deg);
+        z-index: 1;
+    }
+
+    .timeline .row::after {
+        content: "\f004";
+        font-family: "Font Awesome 5 Free";
+        font-weight: 700;
+        position: absolute;
+        top: calc(50% - 10px);
+        left: calc(50% - 8px);
+        color: $primary;
+        z-index: 2;
+
+        font-size: 16px; // Puedes ajustar el tamaño si lo deseas
+        display: inline-block; // ⚠️ Esta línea es imprescindible
+        transform-origin: center;
+        animation: latido 1.2s infinite;
+    }
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    transition: .5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.2);
+}
+
+.gallery-item a {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $light;
+    text-decoration: none;
+    transition: .5s;
+    opacity: 0;
+}
+
+.gallery-item:hover a {
+    opacity: 1;
+}
+
+.bg-gallery {
+    background-color: $primary;
+}
+
+.gallery-carousel .owl-nav {
+    position: absolute;
+    width: 135px;
+    height: 60px;
+    top: -60px;
+    left: calc(50% - 67px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.gallery-carousel .owl-nav .owl-prev,
+.gallery-carousel .owl-nav .owl-next {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+    background: transparent;
+    font-size: 20px;
+}
+
+/********** Music Button **********/
+// Animación para el ícono
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.music-button {
+    position: fixed;
+    top: 30px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: $white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s, background 0.3s;
+    z-index: 9999;
+    border: none;
+    outline: none;
+
+    img {
+        width: 28px;
+        transition: filter 0.3s;
+    }
+
+    &.active {
+        background: $primary;
+        transform: scale(1.1);
+
+        img {
+            filter: brightness(0) invert(1);
+            animation: pulse 1s infinite ease-in-out;
+        }
+    }
+}
+
+#contact {
+    p a {
+        color: $secondary !important;
+        font-weight: 600;
+    }
+}
+
+
+#countdown-section {
+    position: absolute;
+    bottom: 0px !important;
+    z-index: 10;
+    margin: 0 auto;
+
+    #countdown {
+        background: $primary !important;
+        padding: 0.75rem 1rem;
+        margin: auto;
+    }
+
+    #countdown h2 {
+        font-size: 2.2rem;
+        color: $white!important
+    }
+
+    #countdown p {
+        font-size: 0.9rem;
+        color: $white!important
+    }
+}
+
+#countdown-section h1 {
+    color: #ecdef4;
+    font-size: 2.5rem;
+    font-family: 'Minion' !important;
+}
+
+.calendar-decorativo {
+    background-color: $white; // fondo rosado claro elegante
+}
+
+.calendar-header {
+    font-size: 2.5rem;
+    color: $dark;
+    font-family: 'MeowScript';
+    font-weight: 600;
+}
+
+.calendar-day {
+    font-size: 3rem;
+    font-weight: 400;
+    color: $dark;
+}
+
+.line {
+    border-top: 2px solid $dark;
+    border-bottom: 2px solid $dark;
+}
+
+.calendar-box img {
+    max-width: 600px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.text-transparent {
+    color: #f1e0cb !important;
+    font-weight: 500 !important;
+}
+
+@media (max-width: 767.98px) {
+    #event .border-right {
+        border-right: none !important;
+    }
+
+    .font-size-mobile {
+        font-size: 13px !important;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilo página de sobre */
+/* Estilos generales para la pantalla de invitación */
+body.intro-page {
+    margin: 0;
+    padding: 0;
+    font-family: $font-family-sans-serif;
+    background:
+        url('../img/iniciales_boda.png') no-repeat top center, // tu imagen
+        $primary;
+    background-size: 80%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-container {
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+}
+
+.titulo-invitacion_fila1 {
+    font-size: 1.5rem;
+    color: $light;
+    font-family: 'Minion';
+}
+
+.titulo-invitacion_fila2 {
+    font-size: 2.7rem;
+    color: $light;
+    font-family: 'MeowScript';
+    margin-top: -20px;
+    font-weight: 100 !important;
+}
+
+.envelope-btn {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.sobre-img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.envelope-btn:hover .sobre-img {
+    transform: scale(1.05);
+}
+
+.click-text {
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    color: $secondary;
+    font-weight: 600;
+    animation: pulse 1.8s infinite;
+    font-family: 'Great Vibes', cursive;
+    background-color: $light;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 0.8;
+        transform: scale(1.05);
+    }
+}
+
+@media (max-width: 480px) {
+    .titulo-invitacion {
+        font-size: 1.8rem;
+    }
+
+    .click-text {
+        font-size: 1rem;
+        font-family: 'Great Vibes', cursive;
+        ;
+
+    }
+
+    .sobre-img {
+        max-width: 450px;
+    }
+}
+
+.envelope-btn {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+}
+
+.sobre-img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+}
+
+.nombre-invitado {
+    position: absolute;
+    bottom: 135px;
+    /* ajusta verticalmente */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 25px;
+    font-size: 1.2rem !important;
+    font-weight: bold;
+    color: #333;
+    z-index: 2;
+    white-space: nowrap;
+    font-family: 'Minion';
+}
+
+.para-label {
+    position: absolute;
+    bottom: 160px;
+    left: 20%;
+    transform: translateX(-50%);
+    padding: 10px 25px;
+    font-size: 1.4rem !important;
+    font-weight: bold;
+    color: $secondary;
+    z-index: 2;
+    white-space: nowrap;
+    font-family: 'MeowScript';
+    ;
+}
+
+@media (max-width: 750px) {
+    .nombre-invitado {
+        position: absolute;
+        bottom: 125px;
+        /* ajusta verticalmente */
+        left: 50%;
+    }
+
+    .para-label {
+        position: absolute;
+        bottom: 150px;
+        /* ajusta verticalmente */
+        left: 20%;
+    }
+}
+
+.text-note {
+    font-size: 0.8rem;
+    padding-top: 0px !important;
+    margin-bottom: 0px;
+}
+
+/********** Save the Date Section **********/
+
+.save-date {
+    text-align: center;
+    color: $color-background;
+    margin: 2rem 0;
+    font-family: 'Minion';
+
+    &__date {
+        position: relative;
+        font-size: 2rem;
+        font-weight: 600;
+        display: inline-block;
+        margin-bottom: 0px !important;
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 50%;
+            width: 60px; // largo de las líneas
+            height: 2.3px; // grosor
+            background: $primary;
+        }
+
+        &::before {
+            left: -70px; // distancia desde la fecha
+            transform: translateY(-50%);
+        }
+
+        &::after {
+            right: -70px;
+            transform: translateY(-50%);
+        }
+    }
+
+    &__text {
+        font-size: 1.5rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: $primary !important;
+        font-weight: 600 !important;
+        margin-top: -6px !important;
+
+        &--big {
+            color: $color-background !important;
+            margin-top: -30px !important;
+        }
+    }
+
+    .script {
+        font-family: 'MeowScript';
+        text-transform: none;
+        font-size: 2.5rem;
+        margin: 0 0.25rem;
+    }
+}
+
+.text-sobre {
+    color: $light
+}
+
+.click-box {
+    display: inline-block;
+    background: $light; // fondo crema (ajústalo a tu paleta)
+    padding: 0.3rem 1.25rem;
+    border-radius: 8px;
+    font-family: 'Minion';
+    font-size: 1.2rem;
+    color: $secondary; // verde oscuro de tu paleta
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    .click-word {
+        font-family: 'MeowScript' !important;
+        font-weight: 100;
+        color: $primary;
+        font-size: 2rem; // rojo/rosado de tu paleta
+        padding-right: 8px;
+    }
+
+    &:hover {
+        transform: translateY(-3px);
+        cursor: pointer;
+    }
+}
+
+.titulo-seccion {
+    font-family: 'Minion';
+    /* fuente elegante */
+    font-size: 20px;
+    font-weight: 200;
+    color: #e58b8b;
+    /* tono rosado similar al de la imagen */
+}
+
+.titulo-seccion .cursiva {
+    font-family: 'MeowScript' !important;
+    /* estilo manuscrito */
+    font-size: 2.5rem;
+    font-weight: 100 !important;
+    padding-right: 0.5rem;
+}
+
+.text-title {
+    color: $secondary;
+}
+
+#event,
+#section {
+    background-color: $light;
+}
+
+.icon-title {
+    max-width: 100px;
+}
+
+.title-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'MeowScript';
+    /* estilo manuscrito */
+    font-size: 2.5rem;
+    color: $primary;
+    /* tono rosado */
+}
+
+.title-section::before,
+.title-section::after {
+    content: "";
+    width: 40px;
+    /* controla el largo de la línea */
+    border-bottom: 1.5px solid $secondary;
+    /* más grosor y color */
+    margin: 0 10px;
+}
+
+.title-galery,
+.title-uploadPhoto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Minion';
+    /* estilo manuscrito */
+    font-size: 1.7rem;
+    font-weight: 100;
+    color: $white;
+    /* tono rosado */
+}
+
+.title-galery .cursiva {
+    font-family: 'MeowScript' !important;
+    font-size: 2.5rem;
+    padding-left: 0.5rem;
+}
+
+.title-uploadPhoto .cursiva {
+    font-family: 'MeowScript' !important;
+    font-size: 2.5rem;
+    padding-left: 0.5rem;
+}
+
+.title-galery::before,
+.title-galery::after {
+    content: "";
+    width: 40px;
+    /* controla el largo de la línea */
+    border-bottom: 1.5px solid $white;
+    /* más grosor y color */
+    margin: 0 10px;
+}
+
+.text-black {
+    color: #000000
+}
+
+.bg-image-overlay {
+    background-image: url('../img/galeria_4.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    color: white;
+    min-height: 70vh;
+}
+
+.bg-image-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+    z-index: 1;
+}
+
+.bg-image-overlay .container {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Centra verticalmente */
+    min-height: 70vh;
+}
+
+
+/*Estilos formulario
+  /* NUEVOS ESTILOS MÍNIMOS - Solo lo necesario */
+.attendance-selector {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.attendance-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 12px 30px;
+    margin: 8px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.attendance-btn:hover,
+.attendance-btn:focus {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.attendance-btn.active {
+    background: $primary;
+    border-color: $light;
+}
+
+.guest-counter-section {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.counter-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 15px;
+}
+
+.counter-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.guest-count-display {
+    background: white;
+    color: #333;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.guest-field-group {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.guest-field-group h6 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+.icon-iniciales {
+    filter: brightness(0) invert(1);
+}
+
+
+.para-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* ✅ OVERLAY BASE TEMÁTICO DE BODA */
+#loadingOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $light;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(8px);
+}
+
+.wedding-loading-content {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3rem 2.5rem;
+    border-radius: 25px;
+    border: 2px solid rgba(255, 192, 203, 0.5);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.1),
+        0 5px 15px rgba(255, 192, 203, 0.4);
+    max-width: 350px;
+    animation: slideInWedding 0.5s ease-out;
+}
+
+@keyframes slideInWedding {
+    from {
+        opacity: 0;
+        transform: translateY(-30px) scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ✅ OPCIÓN 1: CORAZONES GIRANDO */
+.wedding-spinner-hearts {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+}
+
+.heart {
+    position: absolute;
+    font-size: 1.5rem;
+    animation: heartSpin 2s linear infinite;
+}
+
+.heart-1 {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 0s;
+}
+
+.heart-2 {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    animation-delay: 0.66s;
+}
+
+.heart-3 {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    animation-delay: 1.33s;
+}
+
+@keyframes heartSpin {
+    0% { 
+        opacity: 1; 
+        transform: translateX(-50%) scale(1);
+    }
+    33% { 
+        opacity: 0.7; 
+        transform: translateX(-50%) scale(1.2);
+    }
+    66% { 
+        opacity: 0.3; 
+        transform: translateX(-50%) scale(0.8);
+    }
+    100% { 
+        opacity: 1; 
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+/* ✅ OPCIÓN 2: ANILLOS GIRANDO */
+.wedding-spinner-rings {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1.5rem;
+}
+
+.ring {
+    position: absolute;
+    font-size: 2rem;
+    animation: ringSpin 3s linear infinite;
+}
+
+.ring-1 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: 0s;
+}
+
+.ring-2 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: 1.5s;
+}
+
+@keyframes ringSpin {
+    0% { 
+        opacity: 1; 
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    }
+    50% { 
+        opacity: 0.5; 
+        transform: translate(-50%, -50%) rotate(180deg) scale(1.3);
+    }
+    100% { 
+        opacity: 1; 
+        transform: translate(-50%, -50%) rotate(360deg) scale(1);
+    }
+}
+
+/* ✅ OPCIÓN 3: FLORES FLOTANDO */
+.wedding-spinner-flowers {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 1.5rem;
+}
+
+.flower {
+    position: absolute;
+    font-size: 1.2rem;
+    animation: floatFlower 4s ease-in-out infinite;
+}
+
+.flower-1 {
+    top: 0;
+    left: 0;
+    animation-delay: 0s;
+}
+
+.flower-2 {
+    top: 0;
+    right: 0;
+    animation-delay: 1s;
+}
+
+.flower-3 {
+    bottom: 0;
+    left: 0;
+    animation-delay: 2s;
+}
+
+.flower-4 {
+    bottom: 0;
+    right: 0;
+    animation-delay: 3s;
+}
+
+@keyframes floatFlower {
+    0%, 100% { 
+        transform: translateY(0) rotate(0deg);
+        opacity: 0.7;
+    }
+    25% { 
+        transform: translateY(-10px) rotate(90deg);
+        opacity: 1;
+    }
+    50% { 
+        transform: translateY(-5px) rotate(180deg);
+        opacity: 0.8;
+    }
+    75% { 
+        transform: translateY(-15px) rotate(270deg);
+        opacity: 1;
+    }
+}
+
+/* ✅ ALTERNATIVA: CORAZÓN LATIENDO GRANDE */
+.wedding-loading-content-heart {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3rem 2.5rem;
+    border-radius: 25px;
+    border: 2px solid rgba(255, 192, 203, 0.5);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    animation: slideInWedding 0.5s ease-out;
+}
+
+.beating-heart {
+    font-size: 4rem;
+    animation: heartBeat 1.5s ease-in-out infinite;
+    margin-bottom: 1.5rem;
+}
+
+@keyframes heartBeat {
+    0%, 100% { 
+        transform: scale(1);
+        filter: hue-rotate(0deg);
+    }
+    50% { 
+        transform: scale(1.2);
+        filter: hue-rotate(10deg);
+    }
+}
+
+/* ✅ ALTERNATIVA: PAREJA BAILANDO */
+.wedding-loading-content-dance {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3rem 2.5rem;
+    border-radius: 25px;
+    border: 2px solid rgba(255, 192, 203, 0.5);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    animation: slideInWedding 0.5s ease-out;
+}
+
+.dancing-couple {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.dancer {
+    animation: dance 2s ease-in-out infinite;
+}
+
+.dancer:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.dancer:nth-child(2) {
+    animation-delay: 1s;
+}
+
+@keyframes dance {
+    0%, 100% { 
+        transform: translateY(0) rotate(0deg);
+    }
+    25% { 
+        transform: translateY(-10px) rotate(-5deg);
+    }
+    50% { 
+        transform: translateY(-5px) rotate(0deg);
+    }
+    75% { 
+        transform: translateY(-10px) rotate(5deg);
+    }
+}
+
+/* ✅ MENSAJES DEL OVERLAY */
+.wedding-message {
+    color: #333;
+}
+
+.wedding-message p {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #d63384;
+}
+
+.wedding-message small {
+    opacity: 0.8;
+    font-size: 0.9rem;
+    color: #6c757d;
+    font-style: italic;
+}
+
+/* ✅ RESPONSIVE */
+@media (max-width: 768px) {
+    .wedding-loading-content,
+    .wedding-loading-content-heart,
+    .wedding-loading-content-dance {
+        margin: 1rem;
+        padding: 2rem 1.5rem;
+        max-width: 90%;
+    }
+    
+    .wedding-spinner-hearts,
+    .wedding-spinner-rings {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .beating-heart {
+        font-size: 3rem;
+    }
+    
+    .dancing-couple {
+        font-size: 2rem;
+    }
+}
+
+/* ✅ MENSAJES DE RESULTADO EN LA PÁGINA */
+#resultMessage {
+    margin: 2rem 0;
+    min-height: 60px; /* Reservar espacio para evitar saltos */
+}
+
+.result-message {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+    border-radius: 12px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: slideInResult 0.4s ease-out;
+    transition: all 0.5s ease;
+}
+
+@keyframes slideInResult {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.result-text {
+    flex: 1;
+    line-height: 1.4;
+}
+
+/* ✅ COLORES PARA DIFERENTES TIPOS DE MENSAJES */
+.alert-success {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    color: #155724;
+    border-left: 4px solid #28a745;
+}
+
+.alert-error,
+.alert-danger {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+    color: #721c24;
+    border-left: 4px solid #dc3545;
+}
+
+.alert-warning {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+    color: #856404;
+    border-left: 4px solid #ffc107;
+}
+
+/* ✅ RESPONSIVE */
+@media (max-width: 768px) {
+    .loading-content {
+        margin: 1rem;
+        padding: 2rem 1.5rem;
+    }
+    
+    .result-message {
+        margin: 1rem;
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .result-icon {
+        font-size: 1.25rem;
+    }
+}
