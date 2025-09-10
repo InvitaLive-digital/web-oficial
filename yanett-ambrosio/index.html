@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="es">
-
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- META TAGS BASE (se actualizarán con JavaScript) -->
     <title>💍 Yanett & Ambrosio - Nuestras Bodas de Plata</title>
+    <meta name="description" content="💕 Yanett & Ambrosio te invitan a sus Bodas de Plata - 25 Octubre 2025. ¡Confirma tu asistencia!">
     
-    <!-- 📱 META TAGS ESENCIALES PARA WHATSAPP -->
-    <meta name="description" content="💕 Yanett & Ambrosio te invitan a su bodas de Plata - 25 Octubre 2025. ¡Confirma tu asistencia!">
-    
-    <!-- 📖 OPEN GRAPH (WhatsApp, Facebook) -->
+    <!-- OPEN GRAPH BASE -->
     <meta property="og:title" content="💍 Yanett & Ambrosio - ¡Nuestras Bodas de Plata!">
     <meta property="og:description" content="💕 25 de Octubre 2025 - 9:45 AM. ¡Acompáñanos en nuestro día especial! Confirma tu asistencia.">
     <meta property="og:image" content="https://invitalive.com/yanett-ambrosio/img/FAMILIA_3.png">
     <meta property="og:url" content="https://invitalive.com/yanett-ambrosio/">
     <meta property="og:type" content="website">
-    
-    <!-- 🚨 META ADICIONALES PARA FACEBOOK MESSENGER -->
     <meta property="og:image:secure_url" content="https://invitalive.com/yanett-ambrosio/img/FAMILIA_3.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -25,13 +21,10 @@
     <meta property="og:site_name" content="Bodas de Plata - Yanett & Ambrosio" />
     <meta property="og:locale" content="es_ES" />
     
-    <!-- 📱 FACEBOOK MESSENGER ESPECÍFICOS -->
     <meta name="keywords" content="bodas de plata, aniversario, invitación, Yanett, Ambrosio" />
-    
-    <!-- 🔗 CANONICAL URL -->
     <link rel="canonical" href="https://invitalive.com/yanett-ambrosio/" />
     
-    <!-- 📱 TWITTER (ayuda con la compatibilidad) -->
+    <!-- TWITTER -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="💍 Yanett & Ambrosio - ¡Nuestras Bodas de Plata!" />
     <meta name="twitter:description" content="💕 25 de Octubre 2025 - 9:45 AM. ¡Acompáñanos en nuestro día especial!" />
@@ -39,22 +32,93 @@
     
     <link rel="stylesheet" href="css/style.css" />
     <link href="img/FAMILIA_3.png" rel="icon">
+    
+    <!-- JAVASCRIPT PARA ACTUALIZAR META TAGS Y CONTENIDO -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtener parámetros de la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const nombre = urlParams.get('nombre') || 'Invitado especial';
+            const urlActual = window.location.href;
+            
+            // Actualizar título de la página
+            document.title = `💍 ${nombre} - Estás invitado a las Bodas de Plata`;
+            
+            // Actualizar meta description
+            updateMetaTag('description', `💕 Hola ${nombre}! Yanett & Ambrosio te invitan a sus Bodas de Plata - 25 Octubre 2025. ¡Confirma tu asistencia!`);
+            
+            // Actualizar Open Graph tags
+            updateMetaTag('og:title', `💍 ${nombre}, estás invitado a las Bodas de Plata!`);
+            updateMetaTag('og:description', `💕 Hola ${nombre}! 25 de Octubre 2025 - 9:45 AM. ¡Acompáñanos en nuestro día especial! Confirma tu asistencia.`);
+            updateMetaTag('og:url', urlActual);
+            updateMetaTag('og:image:alt', `Invitación Bodas de Plata - ${nombre}`);
+            
+            // Actualizar Twitter tags
+            updateMetaTag('twitter:title', `💍 ${nombre}, estás invitado a las Bodas de Plata!`);
+            updateMetaTag('twitter:description', `💕 Hola ${nombre}! 25 de Octubre 2025 - 9:45 AM. ¡Acompáñanos en nuestro día especial!`);
+            
+            // Actualizar canonical URL
+            updateCanonicalUrl(urlActual);
+            
+            // Mostrar nombre en la página
+            const nombreElement = document.getElementById('nombre-invitado');
+            if (nombreElement) {
+                nombreElement.textContent = nombre;
+            }
+            
+            // Actualizar enlace de inicio para pasar el parámetro
+            const enlaceInicio = document.querySelector('a[href="inicio.html"]');
+            if (enlaceInicio && nombre !== 'Invitado especial') {
+                enlaceInicio.href = `inicio.html?nombre=${encodeURIComponent(nombre)}`;
+            }
+        });
+        
+        // Función para actualizar meta tags
+        function updateMetaTag(property, content) {
+            let meta = document.querySelector(`meta[property="${property}"]`) || 
+                       document.querySelector(`meta[name="${property}"]`);
+            
+            if (meta) {
+                meta.setAttribute('content', content);
+            } else {
+                // Crear meta tag si no existe
+                meta = document.createElement('meta');
+                meta.setAttribute(property.includes(':') ? 'property' : 'name', property);
+                meta.setAttribute('content', content);
+                document.head.appendChild(meta);
+            }
+        }
+        
+        // Función para actualizar URL canónica
+        function updateCanonicalUrl(url) {
+            let canonical = document.querySelector('link[rel="canonical"]');
+            if (canonical) {
+                canonical.setAttribute('href', url);
+            } else {
+                canonical = document.createElement('link');
+                canonical.setAttribute('rel', 'canonical');
+                canonical.setAttribute('href', url);
+                document.head.appendChild(canonical);
+            }
+        }
+    </script>
 </head>
 
 <body class="intro-page">
     <div class="intro-container">
         <h1 class="titulo-invitacion font-secondary">✨Nuestras Bodas de Plata✨</h1>
-
+        
         <!-- Contenedor del sobre y el nombre -->
         <a href="inicio.html" class="envelope-btn">
             <!-- Aquí va el nombre personalizado -->
             <!-- Imagen del sobre -->
             <img src="img/SOBRE_26.png" alt="Abrir sobre" class="sobre-img" />
-            <p id="nombre-invitado" class="nombre-invitado"></p>
-
+            <p id="nombre-invitado" class="nombre-invitado">Invitado especial</p>
+            
             <p class="click-text">Haz clic para ver la invitación</p>
         </a>
     </div>
+    
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
@@ -62,10 +126,8 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-
-
+    
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
-
 </html>
