@@ -174,11 +174,28 @@ document.addEventListener("DOMContentLoaded", function () {
     const params = new URLSearchParams(window.location.search);
     const nombre = params.get("nombre");
     const contenedor = document.getElementById("nombre-invitado");
-
+    const enlaceInicio = document.getElementById("enlace-inicio");
+    
     if (nombre && contenedor) {
-        contenedor.textContent = `${decodeURIComponent(nombre)}`;
+        const nombreDecodificado = decodeURIComponent(nombre);
+        contenedor.textContent = nombreDecodificado;
+        
+        // 🔗 Actualizar el enlace para pasar el nombre a la siguiente página
+        if (enlaceInicio) {
+            const href = enlaceInicio.getAttribute('href');
+            enlaceInicio.setAttribute('href', `${href}?nombre=${encodeURIComponent(nombreDecodificado)}`);
+        }
+    } else if (contenedor) {
+        // Si no hay nombre, mostrar texto por defecto
+        contenedor.textContent = "Invitado especial";
     }
+    
+    // 🎯 DEBUG: Para verificar que los meta tags se generaron correctamente
+    console.log('Nombre detectado:', nombre ? decodeURIComponent(nombre) : 'Sin nombre');
+    console.log('Meta og:title:', document.querySelector('meta[property="og:title"]')?.content || 'No encontrado');
+    console.log('URL actual:', window.location.href);
 });
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const envelope = document.querySelector("a.envelope-btn"); // El botón que lleva a inicio.html
