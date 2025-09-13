@@ -1,70 +1,42 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>💍 Yanett & Ambrosio - Nuestras Bodas de Plata</title>
-    
-    <!-- 🚨 SCRIPT QUE SE EJECUTA DURANTE EL PARSING (ANTES QUE FACEBOOK LEA) -->
-    <script>
-        // Este código se ejecuta INMEDIATAMENTE, antes que Facebook termine de leer
-        (function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const nombre = urlParams.get('nombre');
-            
-            if (nombre) {
-                const nombreDecodificado = decodeURIComponent(nombre);
-                const urlActual = window.location.href;
-                
-                // Escribir meta tags dinámicamente DURANTE el parsing
-                document.write(`
-                    <title>💍 ${nombreDecodificado} - Estás invitado a las Bodas de Plata</title>
-                    <meta name="description" content="💕 Hola ${nombreDecodificado}! Yanett & Ambrosio te invitan a sus Bodas de Plata - 25 Octubre 2025. ¡Confirma tu asistencia!">
-                    <meta property="og:title" content="💍 ${nombreDecodificado}, estás invitado a las Bodas de Plata!">
-                    <meta property="og:description" content="💕 Hola ${nombreDecodificado}! 25 de Octubre 2025 - 9:45 AM. ¡Acompáñanos en nuestro día especial! Confirma tu asistencia.">
-                    <meta property="og:url" content="${urlActual}">
-                    <meta property="og:image:alt" content="Invitación Bodas de Plata - ${nombreDecodificado}">
-                    <meta name="keywords" content="bodas de plata, aniversario, invitación, ${nombreDecodificado}, Yanett, Ambrosio">
-                    <link rel="canonical" href="${urlActual}">
-                    <meta name="twitter:title" content="💍 ${nombreDecodificado}, estás invitado a las Bodas de Plata!">
-                    <meta name="twitter:description" content="💕 Hola ${nombreDecodificado}! 25 de Octubre 2025 - 9:45 AM. ¡Acompáñanos en nuestro día especial!">
-                `);
-            } else {
-                // Meta tags por defecto si no hay nombre
-                document.write(`
-                    <meta name="description" content="💕 Yanett & Ambrosio te invitan a sus Bodas de Plata - 25 Octubre 2025. ¡Confirma tu asistencia!">
-                    <meta property="og:title" content="💍 Yanett & Ambrosio - ¡Nuestras Bodas de Plata!">
-                    <meta property="og:description" content="💕 25 de Octubre 2025 - 9:45 AM. ¡Acompáñanos en nuestro día especial! Confirma tu asistencia.">
-                    <meta property="og:url" content="https://invitalive.com/yanett-ambrosio/">
-                    <meta property="og:image:alt" content="Invitación Bodas de Plata - Yanett y Ambrosio">
-                    <meta name="keywords" content="bodas de plata, aniversario, invitación, Yanett, Ambrosio">
-                    <link rel="canonical" href="https://invitalive.com/yanett-ambrosio/">
-                    <meta name="twitter:title" content="💍 Yanett & Ambrosio - ¡Nuestras Bodas de Plata!">
-                    <meta name="twitter:description" content="💕 25 de Octubre 2025 - 9:45 AM. ¡Acompáñanos en nuestro día especial!">
-                `);
-            }
-        })();
-    </script>
-    
-    <!-- 📖 META TAGS FIJOS (imagen, tipo, etc.) -->
-    <meta property="og:image" content="https://invitalive.com/yanett-ambrosio/img/FAMILIA_3.png">
+
+    <!-- 📱 META TAGS ESENCIALES PARA WHATSAPP -->
+    <meta name="description"
+        content="💕 Yanett & Ambrosio te invitan a su bodas de Plata - 25 Octubre 2025. ¡Confirma tu asistencia!">
+
+    <!-- 📖 OPEN GRAPH (WhatsApp, Facebook) -->
+    <meta property="og:title" content="💍 Yanett & Ambrosio - ¡Nuestras Bodas de Plata!">
+    <meta property="og:description"
+        content="💕 25 de Octubre 2025 - 9:45 AM. ¡Acompáñanos en nuestro día especial! Confirma tu asistencia.">
+    <meta property="og:image" content="https://invitalive.com/yanett-ambrosio/img/IMAGEN-PORTADA.png">
+    <meta property="og:url" content="https://invitalive.com/yanett-ambrosio/">
     <meta property="og:type" content="website">
-    <meta property="og:image:secure_url" content="https://invitalive.com/yanett-ambrosio/img/FAMILIA_3.png" />
+
+    <!-- 🚨 META ADICIONALES PARA FACEBOOK MESSENGER -->
+    <meta property="og:image:secure_url" content="https://invitalive.com/yanett-ambrosio/img/IMAGEN-PORTADA.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Invitación Bodas de Plata - Yanett y Ambrosio" />
     <meta property="og:site_name" content="Bodas de Plata - Yanett & Ambrosio" />
     <meta property="og:locale" content="es_ES" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://invitalive.com/yanett-ambrosio/img/FAMILIA_3.png" />
-    
-    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- 📱 FACEBOOK MESSENGER ESPECÍFICOS -->
+    <meta name="keywords" content="bodas de plata, aniversario, invitación, Yanett, Ambrosio" />
+
+
     <link href="img/FAMILIA_3.png" rel="icon">
 </head>
 
 <body class="intro-page">
     <div class="intro-container">
         <h1 class="titulo-invitacion font-secondary">✨Nuestras Bodas de Plata✨</h1>
-        
+
         <!-- Contenedor del sobre y el nombre -->
         <a href="inicio.html" class="envelope-btn" id="enlace-inicio">
             <!-- Imagen del sobre -->
@@ -73,7 +45,7 @@
             <p class="click-text">Haz clic para ver la invitación</p>
         </a>
     </div>
-    
+
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
@@ -81,8 +53,9 @@
     <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <script src="lib/lightbox/js/lightbox.min.js"></script>
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-    
+
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 </body>
+
 </html>
