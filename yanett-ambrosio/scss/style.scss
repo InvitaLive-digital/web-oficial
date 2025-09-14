@@ -509,6 +509,25 @@ $border-width: 2px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4) !important;
 }
 
+.para-container {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.para-label {
+    position: absolute;
+    bottom: 225px;
+    left: 25%;
+    transform: translateX(-50%);
+    padding: 10px 25px;
+    font-size: 1.6rem !important;
+    font-weight: bold;
+    color: $primary;
+    z-index: 2;
+    white-space: nowrap;
+    font-family: 'Great Vibes', cursive;
+}
+
 @media (max-width: 767.98px) {
     #event .border-right {
         border-right: none !important;
@@ -639,12 +658,12 @@ body.intro-page {
 
 .nombre-invitado {
     position: absolute;
-    bottom: 145px;
+    bottom: 190px;
     /* ajusta verticalmente */
-    left: 55%;
+    left: 50%;
     transform: translateX(-50%);
     padding: 10px 25px;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
     font-weight: bold;
     color: #333;
     z-index: 2;
@@ -656,8 +675,12 @@ body.intro-page {
 @media (max-width: 750px) {
     .nombre-invitado {
         position: absolute;
-        bottom: 115px;
+        bottom: 155px;
         /* ajusta verticalmente */
         left: 50%;
+    }
+    .para-label {
+        position: absolute;
+        bottom: 185px;
     }
 }
