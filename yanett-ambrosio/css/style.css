@@ -1827,7 +1827,7 @@ pre code {
   color: #495057;
   background-color: #fff;
   background-clip: padding-box;
-  border: 2px solid #ced4da;
+  border: 2px solid #E6E6FA;
   border-radius: 0;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -3182,7 +3182,7 @@ input[type=button].btn-block {
   text-align: center;
   white-space: nowrap;
   background-color: #e9ecef;
-  border: 2px solid #ced4da;
+  border: 2px solid #E6E6FA;
 }
 .input-group-text input[type=radio],
 .input-group-text input[type=checkbox] {
@@ -3368,7 +3368,7 @@ input[type=button].btn-block {
   color: #495057;
   vertical-align: middle;
   background: #fff url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px;
-  border: 2px solid #ced4da;
+  border: 2px solid #E6E6FA;
   border-radius: 0;
   appearance: none;
 }
@@ -3456,7 +3456,7 @@ input[type=button].btn-block {
   line-height: 1.5;
   color: #495057;
   background-color: #fff;
-  border: 2px solid #ced4da;
+  border: 2px solid #E6E6FA;
 }
 .custom-file-label::after {
   position: absolute;
@@ -9539,6 +9539,96 @@ body.intro-page {
     position: absolute;
     bottom: 185px;
   }
+}
+/*Estilos formulario
+  /* NUEVOS ESTILOS MÍNIMOS - Solo lo necesario */
+.attendance-selector {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.attendance-btn {
+  background: white !important;
+  border: 1px solid #9d84b9;
+  color: #9d84b9;
+  padding: 12px 30px;
+  margin: 8px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.attendance-btn:hover,
+.attendance-btn:focus {
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.attendance-btn.active {
+  background: #9d84b9 !important;
+  border-color: #FFFFFF;
+}
+
+.guest-counter-section {
+  background: #E6E6FA;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.counter-btn {
+  background: #A58ECF;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 0 15px;
+}
+
+.counter-btn:hover {
+  background: #9d84b9;
+  color: white;
+}
+
+.guest-count-display {
+  background: white;
+  color: #333;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.guest-field-group {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+.guest-field-group h6 {
+  color: #9d84b9;
+  margin-bottom: 15px;
+  font-size: 0.9rem;
+}
+
+.form-control {
+  border-radius: 10px;
+}
+
+.icon-iniciales {
+  filter: brightness(0) invert(1);
+}
+
+.para-container {
+  text-align: center;
+  margin-top: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */

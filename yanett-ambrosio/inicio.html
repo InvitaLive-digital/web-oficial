@@ -556,7 +556,7 @@
 
     <!-- RSVP Start -->
     <div class="container-fluid py-5" id="rsvp">
-        <div class="container py-5">
+        <div class="container py-3">
             <div class="section-title position-relative text-center animate-on-scroll">
                 <!-- <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px;">RSVP</h6> -->
                 <h1 class="font-secondary display-4">Confirma tu Asistencia</h1>
@@ -564,7 +564,7 @@
             </div>
             <div class="row justify-content-center animate-on-scroll">
                 <div class="col-md-6 text-center">
-                    <h5 class="font-weight-normal text-muted mb-3 pb-3">¡Tu presencia es muy importante para nosotros!
+                    <h5 class="font-weight-normal text-muted">¡Tu presencia es muy importante para nosotros!
                         Por favor, confirma tu asistencia antes del 15 de septiembre de 2025 para poder prepararnos con
                         mucho cariño y alegría.
                         ¡Será un día inolvidable y queremos compartirlo contigo!
@@ -583,62 +583,54 @@
             <div class="col-lg-8">
                 <div class="text-center">
                     <form id="rsvpForm">
-                        <div class="form-row">
-                            <div class="form-group col-sm-6">
-                                <input name="nombre" required="required" type="text"
-                                    class="form-control bg-secondary border-0 py-4 px-3" placeholder="Tu nombre" />
-                            </div>
-                            <div class="form-group col-sm-6">
-                                <select name="pases" class="form-control bg-secondary border-0" style="height: 52px;"
-                                    required="required">
-                                    <option value="">Número de Pase</option>
-                                    <option>1</option>
-                                    <option>2</option>
-                                    <option>3</option>
-                                    <option>4</option>
-                                    <option>5</option>
-                                    <option>6</option>
-                                    <option>7</option>
-                                    <option>8</option>
-                                </select>
-                            </div>
-                            <!-- <div class="form-group col-sm-6">
-                                    <input type="email" class="form-control bg-secondary border-0 py-4 px-3"
-                                        placeholder="Your Email" />
-                                </div> -->
+                        <!-- NUEVO: Selector de asistencia -->
+                        <div class="attendance-selector">
+                            <h6 class="text-dark mb-3">¿Podrás acompañarnos?</h6>
+                            <button type="button" class="btn attendance-btn" data-attendance="yes">
+                                <i class="fas fa-heart me-1"></i> ¡Sí, estaré ahí!
+                            </button>
+                            <button type="button" class="btn attendance-btn" data-attendance="no">
+                                <i class="fas fa-heart-broken me-1"></i> No podré asistir
+                            </button>
                         </div>
-                        <!-- <div class="form-row"> -->
-                        <!-- <div class="form-group col-sm-6">
-                                    <select class="form-control bg-secondary border-0" style="height: 52px;">
-                                        <option>Number of Guest</option>
-                                        <option>1</option>
-                                        <option>2</option>
-                                        <option>3</option>
-                                        <option>4</option>
-                                    </select>
-                                </div> -->
-                        <!-- <div class="form-group col-sm-6">
-                                    <select class="form-control bg-secondary border-0" style="height: 52px;">
-                                        <option>I'm Attending</option>
-                                        <option>All Events</option>
-                                        <option>Wedding Party</option>
-                                    </select>
-                                </div> -->
-                        <!-- </div> -->
-                        <div class="form-group">
-                            <textarea name="nota" class="form-control bg-secondary border-0 py-2 px-3" rows="5"
-                                placeholder="Muchas Felicidades, estaré presente!!"></textarea>
+
+                        <!-- NUEVO: Contador de invitados (solo aparece si dice que sí) -->
+                        <div id="guestCounterSection" class="guest-counter-section" style="display: none;">
+                            <h6 class="text-dark mb-3">¿Cuántas personas asistirán?</h6>
+                            <div class="d-flex justify-content-center align-items-center">
+                                <button type="button" class="btn counter-btn" id="decreaseGuests">
+                                    <i class="fas fa-minus"></i>
+                                </button>
+                                <span class="guest-count-display" id="guestCountDisplay">1</span>
+                                <button type="button" class="btn counter-btn" id="increaseGuests">
+                                    <i class="fas fa-plus"></i>
+                                </button>
+                            </div>
+                            <small class="text-dark d-block mt-2">Incluye tu nombre y el de tus acompañantes</small>
                         </div>
+
+                        <!-- MODIFICADO: Contenedor dinámico para campos de invitados -->
+                        <div id="guestFieldsContainer">
+                            <!-- Los campos se generan aquí dinámicamente -->
+                        </div>
+                        <!-- Campo de mensaje (aparece siempre) -->
+                        <div class="form-group" id="messageSection">
+                            <textarea name="nota" class="form-control  py-2 px-3" rows="5"
+                                placeholder="Deja un mensaje de felicitaciones..."></textarea>
+                        </div>
+
+                        <!-- Campo anti-spam (mantener igual) -->
                         <input type="text" name="website" tabindex="-1" autocomplete="off"
                             style="position:absolute;left:-9999px;opacity:0;">
 
                         <div>
-                            <button class="btn btn-primary font-weight-bold py-3 px-5" type="submit">Confirmar
-                                Asistencia</button>
+                            <button class="btn btn-dark font-weight-bold px-5" type="submit" id="submitBtn">
+                                CONFIRMAR ASISTENCIA
+                            </button>
                         </div>
-                        <div id="rsvpStatus" class="mt-3 small"></div>
-
-
+                        <div id="resultMessage" class="mt-2">
+                            <!-- Los mensajes aparecerán aquí dinámicamente -->
+                        </div>
                     </form>
                 </div>
             </div>

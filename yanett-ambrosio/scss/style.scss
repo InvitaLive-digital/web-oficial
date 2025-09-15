@@ -684,3 +684,95 @@ body.intro-page {
         bottom: 185px;
     }
 }
+
+/*Estilos formulario
+  /* NUEVOS ESTILOS MÍNIMOS - Solo lo necesario */
+.attendance-selector {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.attendance-btn {
+    background: white!important;
+    border: 1px solid $dark;
+    color: $dark;
+    padding: 12px 30px;
+    margin: 8px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.attendance-btn:hover,
+.attendance-btn:focus {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+.attendance-btn.active {
+    background: $dark!important;
+    border-color: $light;
+}
+
+.guest-counter-section {
+    background: $secondary;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.counter-btn {
+    background: $primary;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 15px;
+}
+
+.counter-btn:hover {
+    background: $dark;
+    color: white;
+}
+
+.guest-count-display {
+    background: white;
+    color: #333;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.guest-field-group {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.guest-field-group h6 {
+    color: $dark;
+    margin-bottom: 15px;
+    font-size: 0.9rem;
+}
+
+.form-control {
+    border-radius: 10px;
+}
+
+.icon-iniciales {
+    filter: brightness(0) invert(1);
+}
+
+
+.para-container {
+    text-align: center;
+    margin-top: 15px;
+}
