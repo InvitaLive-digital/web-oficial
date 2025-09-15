@@ -698,7 +698,7 @@ body.intro-page {
 .attendance-btn {
     background: white!important;
     border: 1px solid $dark;
-    color: $dark;
+    color: $dark!important;
     padding: 12px 30px;
     margin: 8px;
     border-radius: 25px;
@@ -707,14 +707,15 @@ body.intro-page {
 
 .attendance-btn:hover,
 .attendance-btn:focus {
-    background: rgba(255, 255, 255, 0.3);
-    color: white;
-    border-color: rgba(255, 255, 255, 0.6);
+    background: $dark!important;
+    color: white!important;
+    border-color: $dark!important;
 }
 
 .attendance-btn.active {
     background: $dark!important;
-    border-color: $light;
+    border-color: $dark!important;
+    color: white!important;
 }
 
 .guest-counter-section {

@@ -9553,7 +9553,7 @@ body.intro-page {
 .attendance-btn {
   background: white !important;
   border: 1px solid #9d84b9;
-  color: #9d84b9;
+  color: #9d84b9 !important;
   padding: 12px 30px;
   margin: 8px;
   border-radius: 25px;
@@ -9562,14 +9562,15 @@ body.intro-page {
 
 .attendance-btn:hover,
 .attendance-btn:focus {
-  background: rgba(255, 255, 255, 0.3);
-  color: white;
-  border-color: rgba(255, 255, 255, 0.6);
+  background: #9d84b9 !important;
+  color: white !important;
+  border-color: #9d84b9 !important;
 }
 
 .attendance-btn.active {
   background: #9d84b9 !important;
-  border-color: #FFFFFF;
+  border-color: #9d84b9 !important;
+  color: white !important;
 }
 
 .guest-counter-section {
