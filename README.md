@@ -8,7 +8,7 @@ Aquí vive la página principal y **una carpeta por cada invitación**.
 | Dirección | Carpeta | Repositorio de origen |
 |---|---|---|
 | `invitalive.pe` | `index.html` | (este repositorio) |
-| `invitalive.pe/henry-50` | `henry-50/` | `henry-50` |
+| `invitalive.pe/henry-50` | `henry-50/` | `InvitaLive-digital/henry-50` |
 | `invitalive.pe/yanett-ambrosio` | `yanett-ambrosio/` | `InvitaLive-digital/yanett-ambrosio` |
 | `invitalive.pe/yesenia-manuel` | `yesenia-manuel/` | `InvitaLive-digital/yesenia-manuel` |
 
@@ -44,8 +44,9 @@ Repositorio de la invitación  ──git push──►  GitHub Actions (deploy.y
 
 Es un token personal de GitHub que permite a las invitaciones escribir en este repositorio.
 
-- Dónde se guarda: **Organización → Settings → Secrets and variables → Actions**
-  (o en *Settings → Secrets* de cada repositorio).
+- Dónde se guarda: **Organización → Settings → Secrets and variables → Actions**, como secreto de
+  organización con acceso para *All repositories*. Así cada invitación nueva lo recibe sola.
+- Si una publicación falla con `not found deploy key or tokens`, el repositorio no tiene acceso al secreto.
 - Si una publicación falla con error de permisos (`403` / `Bad credentials`), el token venció. Para renovarlo:
   1. GitHub → foto de perfil → **Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token**.
   2. *Resource owner*: `InvitaLive-digital` · *Repository access*: solo `web-oficial` · *Permissions*: **Contents → Read and write**.
