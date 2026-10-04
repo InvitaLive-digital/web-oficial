@@ -3,89 +3,750 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Invitalive · Invitaciones digitales</title>
-    <meta name="description" content="Invitaciones digitales para momentos inolvidables." />
-    <meta name="theme-color" content="#060C1C" />
+    <title>InvitaLive · Invitaciones digitales</title>
+    <meta name="description" content="Invitaciones digitales para bodas, bodas de plata, cumpleaños, bautizos y quinceañeros. Diseños elegantes, confirmación online, música y chatbot. Planes desde S/ 150." />
+    <meta name="theme-color" content="#FBF6EF" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://invitalive.pe/" />
+    <meta property="og:title" content="InvitaLive · Invitaciones digitales" />
+    <meta property="og:description" content="Para momentos que merecen celebrarse y recordarse. Planes desde S/ 150." />
+    <meta property="og:image" content="https://invitalive.pe/img/compartir.jpg" />
+    <link rel="icon" type="image/png" href="img/icono.png" />
+    <link rel="apple-touch-icon" href="img/icono.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Outfit:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400;1,6..96,500&family=Pinyon+Script&family=Jost:wght@400;500;600&display=swap" rel="stylesheet" />
     <style>
-      * { box-sizing: border-box; margin: 0; }
-      html, body { height: 100%; }
+      :root {
+        --papel: #FBF6EF;
+        --papel-2: #F4EBE0;
+        --blanco: #FFFDF9;
+        --tinta: #3A1E29;
+        --tinta-suave: #574250;
+        --rosa: #C98B7B;
+        --rosa-texto: #9E5847;
+        --rosa-claro: #EBCFC4;
+        --champan: #D9BE95;
+        --salvia: #8E9C86;
+        --linea: rgba(58, 30, 41, 0.12);
+        --wsp: #25D366;
+        --titulo: 'Bodoni Moda', Georgia, serif;
+        --script: 'Pinyon Script', cursive;
+        --texto: 'Jost', system-ui, sans-serif;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; scroll-padding-top: 72px; }
       body {
-        min-height: 100svh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 24px;
-        text-align: center;
-        color: #F7EFE2;
-        font-family: 'Outfit', system-ui, sans-serif;
-        background:
-          radial-gradient(ellipse 60% 45% at 50% 35%, rgba(212, 175, 106, 0.14), transparent 70%),
-          radial-gradient(ellipse at 50% 40%, #14254F 0%, #060C1C 70%);
-      }
-      main {
-        width: 100%;
-        max-width: 520px;
-        padding: 56px 28px;
-        position: relative;
-        border: 1px solid rgba(212, 175, 106, 0.4);
-        background: linear-gradient(160deg, rgba(20, 37, 79, 0.6), rgba(6, 12, 28, 0.8));
-        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
-        animation: aparecer 1s ease both;
-      }
-      main::before {
-        content: '';
-        position: absolute;
-        inset: 7px;
-        border: 1px solid rgba(212, 175, 106, 0.15);
-        pointer-events: none;
-      }
-      .tag {
-        font-size: 0.8rem;
-        font-weight: 500;
-        letter-spacing: 0.35em;
-        text-transform: uppercase;
-        color: #F1D9A6;
-      }
-      h1 {
-        font-family: 'Great Vibes', cursive;
+        background: var(--papel);
+        color: var(--tinta);
+        font-family: var(--texto);
         font-weight: 400;
-        font-size: clamp(4rem, 19vw, 6.5rem);
-        line-height: 1.15;
-        padding: 0 0.15em;
-        background: linear-gradient(180deg, #FFF3D6 0%, #F1D9A6 35%, #D4AF6A 65%, #A8813F 100%);
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-        filter: drop-shadow(0 0 18px rgba(212, 175, 106, 0.4));
+        font-size: 1.06rem;
+        line-height: 1.7;
+        overflow-x: hidden;
       }
-      .linea {
-        width: 180px;
-        height: 2px;
-        margin: 6px auto 26px;
-        background: linear-gradient(to right, transparent, #F1D9A6, transparent);
+      img { display: block; max-width: 100%; }
+      a { color: inherit; }
+      .contenedor { width: 100%; max-width: 1140px; margin: 0 auto; padding: 0 16px; }
+      @media (min-width: 640px) { .contenedor { padding: 0 32px; } }
+
+      .script { font-family: var(--script); font-weight: 400; color: var(--rosa); }
+      .antetitulo {
+        display: inline-flex; align-items: center; gap: 12px;
+        font-size: 0.76rem; font-weight: 500; letter-spacing: 0.26em; text-transform: uppercase; color: var(--rosa-texto);
       }
-      p.frase {
-        font-family: 'Cormorant Garamond', Georgia, serif;
-        font-style: italic;
-        font-size: 1.5rem;
-        line-height: 1.35;
-        color: rgba(247, 239, 226, 0.9);
+      .antetitulo::before, .antetitulo::after { content: ''; width: 28px; height: 1px; background: currentColor; opacity: .6; }
+
+      /* ---------- Botones ---------- */
+      .boton {
+        display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+        padding: 13px 26px; border-radius: 999px; border: 1px solid transparent;
+        font-family: var(--texto); font-size: 0.95rem; font-weight: 500; letter-spacing: 0.03em;
+        text-decoration: none; cursor: pointer; transition: transform .2s, background .2s, box-shadow .2s;
       }
-      @keyframes aparecer {
-        from { opacity: 0; transform: translateY(18px); }
-        to   { opacity: 1; transform: none; }
+      .boton:hover { transform: translateY(-2px); }
+      .boton-tinta { background: var(--tinta); color: var(--papel); box-shadow: 0 10px 24px rgba(58, 30, 41, .18); }
+      .boton-tinta:hover { background: #4E2938; }
+      .boton-borde { border-color: var(--tinta); color: var(--tinta); background: transparent; }
+      .boton-borde:hover { background: rgba(58, 30, 41, .05); }
+      .boton-chico { padding: 9px 18px; font-size: 0.85rem; }
+      .boton svg { width: 18px; height: 18px; flex: none; }
+
+      /* ---------- Navegación ---------- */
+      .nav {
+        position: sticky; top: 0; z-index: 20;
+        background: rgba(251, 246, 239, 0.88);
+        backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--linea);
       }
-      @media (prefers-reduced-motion: reduce) { main { animation: none; } }
+      .nav .contenedor { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+      .logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+      .logo img { height: 42px; width: auto; }
+      .logo-pie img { height: 96px; }
+      .nav ul { display: none; list-style: none; gap: 30px; font-size: 0.92rem; }
+      .nav ul a { text-decoration: none; font-weight: 500; color: var(--tinta-suave); transition: color .2s; }
+      .nav ul a:hover { color: var(--tinta); }
+      @media (min-width: 860px) { .nav ul { display: flex; } }
+
+      /* ---------- Portada ---------- */
+      .portada { position: relative; padding: 56px 0 80px; overflow: hidden; }
+      .portada::before {
+        content: ''; position: absolute; width: 620px; height: 620px; right: -180px; top: -120px; border-radius: 50%;
+        background: radial-gradient(circle, rgba(235, 207, 196, .7), transparent 65%); pointer-events: none;
+      }
+      .portada .contenedor { position: relative; display: grid; gap: 56px; align-items: center; }
+      @media (min-width: 920px) { .portada .contenedor { grid-template-columns: 1.1fr 0.9fr; } .portada { padding: 80px 0 110px; } }
+      .portada h1 {
+        font-family: var(--titulo); font-weight: 500; font-size: clamp(2.6rem, 8vw, 4.4rem);
+        line-height: 1.05; letter-spacing: -0.01em; margin: 18px 0 20px;
+      }
+      .portada h1 em { font-style: italic; color: var(--rosa-texto); }
+      .portada .bajada { max-width: 520px; color: var(--tinta-suave); font-size: 1.08rem; }
+      .portada .acciones { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+      .confianza { display: flex; flex-wrap: wrap; gap: 8px 22px; margin-top: 34px; font-size: 0.88rem; color: var(--tinta-suave); }
+      .confianza span { display: inline-flex; align-items: center; gap: 8px; }
+      .confianza svg { width: 16px; height: 16px; color: var(--salvia); }
+
+      /* Escena: celular + sobre */
+      .escena { position: relative; display: flex; justify-content: center; padding: 10px 0 30px; }
+      .celular {
+        position: relative; z-index: 2; width: 270px; aspect-ratio: 9 / 18.5;
+        border-radius: 42px; padding: 11px; background: #2A1820;
+        box-shadow: 0 40px 70px rgba(58, 30, 41, .28), inset 0 0 0 2px #4A2E3A;
+        transform: rotate(-3deg);
+      }
+      .celular .pantalla {
+        position: relative; height: 100%; border-radius: 32px; overflow: hidden; text-align: center;
+        background:
+          radial-gradient(circle at 50% 0%, rgba(235, 207, 196, .9), transparent 55%),
+          linear-gradient(180deg, var(--blanco), var(--papel-2));
+        display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px 22px;
+      }
+      .pantalla::before {
+        content: ''; position: absolute; top: 9px; left: 50%; width: 76px; height: 20px; transform: translateX(-50%);
+        border-radius: 999px; background: #2A1820;
+      }
+      .pantalla .marco { position: absolute; inset: 40px 14px 14px; border: 1px solid rgba(201, 139, 123, .45); border-radius: 18px; pointer-events: none; }
+      .pantalla .ramo { width: 74px; color: var(--salvia); margin-bottom: 6px; }
+      .pantalla small { font-size: 0.62rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--tinta-suave); }
+      .pantalla .nombres { font-family: var(--script); font-size: 2.6rem; line-height: 1.05; color: var(--tinta); margin: 8px 0 4px; }
+      .pantalla .fecha { font-family: var(--titulo); font-size: 0.95rem; letter-spacing: 0.08em; margin: 6px 0 14px; }
+      .pantalla .cuenta { display: flex; gap: 6px; margin-bottom: 18px; }
+      .pantalla .cuenta div { width: 40px; padding: 6px 0; border-radius: 10px; background: rgba(255,255,255,.75); border: 1px solid var(--linea); }
+      .pantalla .cuenta b { display: block; font-family: var(--titulo); font-weight: 500; font-size: 1rem; line-height: 1.1; }
+      .pantalla .cuenta span { font-size: 0.55rem; letter-spacing: .1em; text-transform: uppercase; color: var(--tinta-suave); }
+      .pantalla .confirmar { font-size: 0.72rem; font-weight: 500; letter-spacing: .06em; padding: 8px 18px; border-radius: 999px; background: var(--tinta); color: var(--papel); }
+
+      .sobre {
+        position: absolute; z-index: 1; left: calc(50% - 250px); bottom: 26px; width: 210px; aspect-ratio: 3 / 2;
+        background: var(--blanco); border-radius: 6px; transform: rotate(-12deg);
+        box-shadow: 0 24px 40px rgba(58, 30, 41, .14);
+        overflow: hidden;
+      }
+      .sobre::before, .sobre::after { content: ''; position: absolute; inset: 0; }
+      .sobre::before { background: linear-gradient(to bottom right, transparent 49.5%, #F1E5D8 50%) , linear-gradient(to bottom left, transparent 49.5%, #EFE1D3 50%); background-size: 50% 100%; background-position: left, right; background-repeat: no-repeat; }
+      .sobre::after { clip-path: polygon(0 0, 100% 0, 50% 58%); background: #F6EDE2; box-shadow: none; }
+      .lacre {
+        position: absolute; z-index: 3; left: calc(50% - 165px); bottom: 64px; width: 54px; height: 54px; border-radius: 50%;
+        display: grid; place-items: center; transform: rotate(-12deg);
+        background: radial-gradient(circle at 35% 30%, #D99E8E, #A9634F 72%);
+        color: #FFF4EE; font-family: var(--titulo); font-style: italic; font-size: 1.05rem;
+        box-shadow: 0 6px 14px rgba(120, 60, 45, .35), inset 0 0 0 3px rgba(255,255,255,.18);
+      }
+      .lacre svg { width: 22px; height: 22px; }
+      .tarjeta-flotante {
+        position: absolute; z-index: 3; right: calc(50% - 230px); top: 64px;
+        display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 14px;
+        background: var(--blanco); box-shadow: 0 16px 30px rgba(58, 30, 41, .14); font-size: 0.8rem; line-height: 1.3;
+        animation: flotar 5s ease-in-out infinite;
+      }
+      .tarjeta-flotante .punto { width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; background: var(--wsp); color: #fff; }
+      .tarjeta-flotante .punto svg { width: 17px; height: 17px; }
+      .tarjeta-flotante b { font-weight: 500; display: block; }
+      .tarjeta-flotante span { color: var(--tinta-suave); }
+      @media (max-width: 520px) {
+        .sobre { left: 8px; width: 160px; }
+        .lacre { left: 72px; }
+        .tarjeta-flotante { right: 0; top: 30px; }
+      }
+      @keyframes flotar { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+      /* ---------- Cinta de eventos ---------- */
+      .cinta { border-block: 1px solid var(--linea); background: var(--blanco); overflow: hidden; padding: 18px 0; }
+      .cinta .pista { display: flex; width: max-content; animation: deslizar 38s linear infinite; }
+      .cinta span { display: inline-flex; align-items: center; gap: 26px; padding-right: 26px; white-space: nowrap; font-family: var(--titulo); font-style: italic; font-weight: 500; font-size: 1.35rem; }
+      .cinta span::after { content: '✦'; font-style: normal; font-size: .8rem; color: var(--rosa); }
+      @keyframes deslizar { to { transform: translateX(-50%); } }
+
+      /* ---------- Secciones ---------- */
+      section.bloque { padding: 96px 0; }
+      section.bloque.tono { background: var(--papel-2); }
+      .encabezado { text-align: center; max-width: 680px; margin: 0 auto 56px; }
+      .encabezado h2 { font-family: var(--titulo); font-weight: 500; font-size: clamp(2.1rem, 6vw, 3.1rem); line-height: 1.1; margin: 14px 0 16px; }
+      .encabezado h2 em { font-style: italic; color: var(--rosa-texto); }
+      .encabezado p { color: var(--tinta-suave); }
+
+      /* Esencia */
+      .esencia { display: grid; gap: 40px; align-items: center; }
+      @media (min-width: 900px) { .esencia { grid-template-columns: 0.9fr 1.1fr; gap: 72px; } }
+      .esencia .cita {
+        position: relative; padding: 48px 34px; text-align: center; border-radius: 4px;
+        background: var(--blanco); box-shadow: 0 30px 60px rgba(58, 30, 41, .08);
+      }
+      .esencia .cita::before { content: ''; position: absolute; inset: 12px; border: 1px solid var(--rosa-claro); pointer-events: none; }
+      .esencia .cita .frase { font-family: var(--titulo); font-style: italic; font-weight: 500; font-size: clamp(1.7rem, 5vw, 2.3rem); line-height: 1.3; color: var(--tinta); }
+      .esencia .cita small { display: block; margin-top: 16px; font-size: .75rem; letter-spacing: .28em; text-transform: uppercase; color: var(--rosa-texto); font-weight: 500; }
+      .esencia h2 { font-family: var(--titulo); font-weight: 500; font-size: clamp(2rem, 5.5vw, 2.8rem); line-height: 1.1; margin: 14px 0 18px; }
+      .esencia > div > p { color: var(--tinta-suave); margin-bottom: 14px; }
+      .valores { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px 26px; margin-top: 28px; }
+      .valores h3 { font-family: var(--texto); font-weight: 600; font-size: 1.02rem; margin-bottom: 2px; display: flex; gap: 10px; align-items: center; }
+      .valores h3::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--rosa); flex: none; }
+      .valores p { font-size: .92rem; color: var(--tinta-suave); }
+      @media (max-width: 460px) { .valores { grid-template-columns: 1fr; } }
+
+      /* Eventos */
+      .eventos { display: grid; gap: 16px; grid-template-columns: repeat(2, 1fr); }
+      @media (min-width: 760px) { .eventos { grid-template-columns: repeat(3, 1fr); } }
+      @media (min-width: 1040px) { .eventos { grid-template-columns: repeat(6, 1fr); } }
+      .evento { text-align: center; padding: 26px 14px; border-radius: 120px 120px 16px 16px; background: var(--blanco); border: 1px solid var(--linea); transition: transform .25s, box-shadow .25s; }
+      .evento:hover { transform: translateY(-4px); box-shadow: 0 18px 36px rgba(58, 30, 41, .09); }
+      .evento svg { width: 40px; height: 40px; margin: 10px auto 12px; color: var(--rosa); }
+      .evento h3 { font-family: var(--texto); font-weight: 600; font-size: 1rem; line-height: 1.25; }
+      .evento p { font-size: .86rem; color: var(--tinta-suave); margin-top: 4px; }
+
+      /* Plantillas */
+      .plantillas { display: grid; gap: 34px 22px; grid-template-columns: 1fr; }
+      @media (min-width: 560px) { .plantillas { grid-template-columns: repeat(2, 1fr); } }
+      @media (min-width: 1000px) { .plantillas { grid-template-columns: repeat(4, 1fr); } }
+      .plantilla { text-decoration: none; text-align: center; display: block; }
+      .plantilla .mini-cel {
+        width: min(240px, 100%); margin: 0 auto; aspect-ratio: 9 / 17; padding: 8px; border-radius: 34px;
+        background: #2A1820; box-shadow: 0 26px 50px rgba(58, 30, 41, .2); transition: transform .3s;
+      }
+      .plantilla:hover .mini-cel { transform: translateY(-6px) rotate(-1.5deg); }
+      .plantilla .mini-cel img { width: 100%; height: 100%; object-fit: cover; border-radius: 27px; }
+      .plantilla .ajustar img { object-fit: contain; background: #EEF1EE; }
+      .plantilla .tipo { display: block; margin-top: 22px; font-size: .74rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--rosa-texto); }
+      .plantilla h3 { font-family: var(--titulo); font-weight: 500; font-size: 1.35rem; margin: 2px 0; }
+      .plantilla .ver { font-size: .92rem; font-weight: 500; color: var(--tinta); text-decoration: underline; text-underline-offset: 4px; text-decoration-color: var(--rosa-claro); }
+
+      /* Planes */
+      .planes { display: grid; gap: 24px; grid-template-columns: 1fr; align-items: stretch; }
+      @media (min-width: 700px) { .planes { grid-template-columns: repeat(2, 1fr); } }
+      @media (min-width: 1100px) { .planes { grid-template-columns: repeat(4, 1fr); } }
+      .plan {
+        position: relative; display: flex; flex-direction: column; padding: 34px 26px 28px;
+        background: var(--blanco); border: 1px solid var(--linea); border-radius: 6px;
+      }
+      .plan::before { content: ''; position: absolute; inset: 8px; border: 1px solid var(--rosa-claro); border-radius: 3px; pointer-events: none; opacity: .7; }
+      .plan.destacado { background: var(--tinta); color: var(--papel); border-color: var(--tinta); box-shadow: 0 30px 60px rgba(58, 30, 41, .25); }
+      .plan.destacado::before { border-color: rgba(217, 190, 149, .4); }
+      .plan .etiqueta {
+        position: absolute; top: -13px; left: 50%; transform: translateX(-50%); white-space: nowrap;
+        padding: 4px 14px; border-radius: 999px; font-size: .7rem; font-weight: 500; letter-spacing: .18em; text-transform: uppercase;
+        background: var(--champan); color: var(--tinta);
+      }
+      .plan .numero { font-size: .74rem; font-weight: 600; letter-spacing: .22em; text-transform: uppercase; color: var(--rosa-texto); margin-bottom: 4px; }
+      .plan.destacado .numero { color: var(--champan); }
+      .plan h3 { font-family: var(--titulo); font-weight: 500; font-size: 1.7rem; line-height: 1.15; }
+      .plan .resumen { font-size: .94rem; color: var(--tinta-suave); margin-top: 4px; min-height: 3em; }
+      .plan.destacado .resumen, .plan.destacado li { color: rgba(251, 246, 239, .9); }
+      .precio { display: flex; align-items: flex-start; gap: 4px; margin: 20px 0 22px; padding-bottom: 22px; border-bottom: 1px dashed var(--linea); }
+      .plan.destacado .precio { border-color: rgba(251, 246, 239, .2); }
+      .precio .moneda { font-size: 1rem; margin-top: 8px; }
+      .precio .monto { font-family: var(--titulo); font-weight: 500; font-size: 3.4rem; line-height: 1; }
+      .plan ul { list-style: none; display: grid; align-content: start; gap: 11px; margin-bottom: 28px; flex: 1; }
+      .plan li { display: grid; grid-template-columns: 18px 1fr; gap: 10px; font-size: .95rem; line-height: 1.5; }
+      .plan li svg { width: 16px; height: 16px; margin-top: 3px; color: var(--rosa); }
+      .plan.destacado li svg { color: var(--champan); }
+      .plan li.base { font-weight: 600; color: var(--tinta); }
+      .plan.destacado li.base { color: var(--papel); }
+      .plan .boton { width: 100%; }
+      .plan.destacado .boton { background: var(--champan); color: var(--tinta); box-shadow: none; }
+      .nota { text-align: center; color: var(--tinta-suave); font-size: .9rem; margin-top: 30px; }
+
+      /* Pasos */
+      .pasos { display: grid; gap: 30px; grid-template-columns: 1fr; counter-reset: paso; }
+      @media (min-width: 780px) { .pasos { grid-template-columns: repeat(4, 1fr); } }
+      .paso { position: relative; padding-top: 10px; }
+      .paso::before { counter-increment: paso; content: '0' counter(paso); display: block; font-family: var(--titulo); font-style: italic; font-size: 2.6rem; line-height: 1; color: var(--rosa-texto); margin-bottom: 10px; }
+      .paso h3 { font-family: var(--texto); font-weight: 600; font-size: 1.08rem; margin-bottom: 4px; }
+      .paso p { color: var(--tinta-suave); font-size: .93rem; }
+
+      /* Preguntas */
+      .preguntas { max-width: 780px; margin: 0 auto; }
+      details { border-bottom: 1px solid var(--linea); }
+      summary { cursor: pointer; list-style: none; padding: 22px 0; display: flex; justify-content: space-between; align-items: center; gap: 20px; font-family: var(--texto); font-weight: 500; font-size: 1.05rem; }
+      summary::-webkit-details-marker { display: none; }
+      summary::after { content: '+'; font-family: var(--texto); font-size: 1.5rem; font-weight: 300; color: var(--rosa); transition: transform .2s; }
+      details[open] summary::after { transform: rotate(45deg); }
+      details p { padding-bottom: 22px; color: var(--tinta-suave); }
+
+      /* Cierre */
+      .cierre { padding: 0 0 96px; }
+      .cierre .caja {
+        position: relative; text-align: center; padding: 72px 24px; border-radius: 8px; overflow: hidden;
+        background: var(--tinta); color: var(--papel);
+      }
+      .cierre .caja::before { content: ''; position: absolute; inset: 12px; border: 1px solid rgba(217, 190, 149, .35); border-radius: 4px; pointer-events: none; }
+      .cierre .logo-cierre { position: relative; width: 190px; height: auto; margin: 0 auto 26px; }
+      .cierre .titulo-cierre { font-family: var(--titulo); font-style: italic; font-weight: 500; font-size: clamp(2.2rem, 7vw, 3.4rem); line-height: 1.15; color: var(--champan); }
+      .cierre p { max-width: 520px; margin: 12px auto 30px; color: rgba(251, 246, 239, .9); }
+      .cierre .boton { background: var(--papel); color: var(--tinta); }
+
+      footer { border-top: 1px solid var(--linea); padding: 30px 0; }
+      footer .contenedor { display: flex; flex-wrap: wrap; gap: 12px; justify-content: space-between; align-items: center; font-size: .85rem; color: var(--tinta-suave); }
+
+      .flotante {
+        position: fixed; right: 16px; bottom: 16px; z-index: 30; width: 56px; height: 56px; border-radius: 50%;
+        display: grid; place-items: center; background: var(--wsp); color: #fff; box-shadow: 0 10px 26px rgba(0,0,0,.2); transition: transform .2s;
+      }
+      .flotante:hover { transform: scale(1.07); }
+      .flotante svg { width: 30px; height: 30px; }
+
+      /* ---------- Animaciones ---------- */
+      .portada .contenedor { z-index: 1; }
+      .entrar { animation: subir .9s cubic-bezier(.2,.7,.2,1) both; animation-delay: var(--d, 0s); }
+      @keyframes subir { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+
+      .celular { animation: celular-entra 1.1s .35s cubic-bezier(.2,.7,.2,1) both, celular-flota 6s 1.6s ease-in-out infinite; }
+      @keyframes celular-entra { from { opacity: 0; transform: translateY(60px) rotate(4deg); } to { opacity: 1; transform: rotate(-3deg); } }
+      @keyframes celular-flota { 0%, 100% { transform: rotate(-3deg) translateY(0); } 50% { transform: rotate(-2deg) translateY(-12px); } }
+      .sobre { animation: sobre-entra 1s .7s cubic-bezier(.2,.7,.2,1) both; }
+      @keyframes sobre-entra { from { opacity: 0; transform: translateX(-50px) rotate(-30deg); } to { opacity: 1; transform: rotate(-12deg); } }
+      .lacre { animation: sellar .55s 1.35s cubic-bezier(.3,1.6,.5,1) both; }
+      @keyframes sellar { from { opacity: 0; transform: scale(1.9) rotate(-12deg); } to { opacity: 1; transform: scale(1) rotate(-12deg); } }
+      .lacre svg { animation: latir 1.6s 2s ease-in-out infinite; }
+      @keyframes latir { 0%, 100% { transform: scale(1); } 15% { transform: scale(1.22); } 30% { transform: scale(1); } 45% { transform: scale(1.14); } 60% { transform: scale(1); } }
+      .tarjeta-flotante { animation: tarjeta-entra .6s 2.1s cubic-bezier(.3,1.4,.5,1) both, flotar 5s 2.8s ease-in-out infinite; }
+      @keyframes tarjeta-entra { from { opacity: 0; transform: translateY(14px) scale(.85); } to { opacity: 1; transform: none; } }
+
+      .pantalla > small, .pantalla .nombres, .pantalla .fecha, .pantalla .cuenta, .pantalla .confirmar { animation: subir .8s both; }
+      .pantalla > small { animation-delay: 1s; }
+      .pantalla .nombres { animation-delay: 1.15s; }
+      .pantalla .fecha { animation-delay: 1.3s; }
+      .pantalla .cuenta { animation-delay: 1.45s; }
+      .pantalla .confirmar { animation: subir .8s 1.6s both, pulso 2.4s 2.6s ease-out infinite; }
+      @keyframes pulso { 0% { box-shadow: 0 0 0 0 rgba(58, 30, 41, .35); } 70%, 100% { box-shadow: 0 0 0 12px rgba(58, 30, 41, 0); } }
+      .ramo path { stroke-dasharray: 90; stroke-dashoffset: 90; animation: dibujar 1.8s .8s ease forwards; }
+      .ramo circle { animation: subir .5s 2.2s both; }
+      @keyframes dibujar { to { stroke-dashoffset: 0; } }
+      .cuenta b { transition: transform .3s; }
+      .cuenta b.cambio { animation: girar .5s ease; }
+      @keyframes girar { from { opacity: .2; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+
+      .petalos { position: absolute; inset: 0; overflow: hidden; pointer-events: none; z-index: 0; }
+      .petalos span {
+        position: absolute; top: -30px; width: 13px; height: 13px; opacity: 0;
+        background: linear-gradient(135deg, #F3D6CB, var(--rosa-claro)); border-radius: 150% 0 150% 0;
+        animation: caer linear infinite;
+      }
+      .petalos span:nth-child(1) { left: 8%;  animation-duration: 13s; animation-delay: 0s; }
+      .petalos span:nth-child(2) { left: 22%; animation-duration: 16s; animation-delay: 4s; transform: scale(.7); }
+      .petalos span:nth-child(3) { left: 38%; animation-duration: 12s; animation-delay: 7s; }
+      .petalos span:nth-child(4) { left: 55%; animation-duration: 15s; animation-delay: 2s; width: 10px; height: 10px; }
+      .petalos span:nth-child(5) { left: 68%; animation-duration: 14s; animation-delay: 9s; }
+      .petalos span:nth-child(6) { left: 80%; animation-duration: 17s; animation-delay: 5s; width: 9px; height: 9px; }
+      .petalos span:nth-child(7) { left: 92%; animation-duration: 13s; animation-delay: 11s; }
+      .petalos span:nth-child(8) { left: 48%; animation-duration: 18s; animation-delay: 13s; width: 11px; height: 11px; }
+      @keyframes caer {
+        0% { opacity: 0; transform: translate(0, 0) rotate(0); }
+        10% { opacity: .85; }
+        50% { transform: translate(40px, 50vh) rotate(200deg); }
+        90% { opacity: .6; }
+        100% { opacity: 0; transform: translate(-20px, 100vh) rotate(420deg); }
+      }
+
+      .cinta:hover .pista { animation-play-state: paused; }
+      .evento svg { transition: transform .4s cubic-bezier(.3,1.6,.5,1); }
+      .evento:hover svg { transform: scale(1.15) rotate(-6deg); }
+      .planes .plan { transition: transform .35s ease, box-shadow .35s ease, opacity .8s ease; }
+      .plan.visible:hover { transform: translateY(-8px); box-shadow: 0 30px 60px rgba(58, 30, 41, .14); }
+      .plan.destacado.visible:hover { box-shadow: 0 36px 70px rgba(58, 30, 41, .32); }
+      .paso::before { transition: transform .4s; }
+      .paso:hover::before { transform: translateX(6px); }
+      .flotante { animation: llamar 6s 4s ease-in-out infinite; }
+      @keyframes llamar { 0%, 88%, 100% { transform: none; } 91% { transform: rotate(-12deg) scale(1.08); } 94% { transform: rotate(10deg) scale(1.08); } 97% { transform: rotate(-6deg); } }
+      .boton-tinta, .plan.destacado .boton { position: relative; overflow: hidden; }
+      .boton-tinta::after, .plan.destacado .boton::after {
+        content: ''; position: absolute; top: 0; left: -60%; width: 40%; height: 100%;
+        background: linear-gradient(100deg, transparent, rgba(255,255,255,.28), transparent); transform: skewX(-20deg);
+        transition: left .7s ease;
+      }
+      .boton-tinta:hover::after, .plan.destacado .boton:hover::after { left: 120%; }
+
+      .revelar { opacity: 0; transform: translateY(20px); transition: opacity .8s ease, transform .8s ease; }
+      .revelar.visible { opacity: 1; transform: none; }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        .revelar { opacity: 1; transform: none; transition: none; }
+        *, *::before, *::after { animation: none !important; transition: none !important; }
+        .ramo path { stroke-dashoffset: 0; }
+        .petalos { display: none; }
+      }
     </style>
   </head>
   <body>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+      <symbol id="i-wsp" viewBox="0 0 24 24" fill="currentColor"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.21 3.07.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.56.93.95-3.47-.22-.36a9.4 9.4 0 0 1-1.44-5.02c0-5.2 4.23-9.43 9.44-9.43 2.52 0 4.89.98 6.67 2.77a9.37 9.37 0 0 1 2.76 6.67c0 5.2-4.24 9.43-9.45 9.43m8.03-17.46A11.27 11.27 0 0 0 12.05.72C5.79.72.7 5.8.7 12.06c0 2 .52 3.95 1.52 5.67L.6 23.6l6.02-1.58a11.3 11.3 0 0 0 5.42 1.38h.01c6.25 0 11.34-5.09 11.35-11.34 0-3.03-1.18-5.88-3.32-8.02"/></symbol>
+      <symbol id="i-hoja" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 4C10 4 4 10 4 20c10 0 16-6 16-16Z"/><path d="M4 20 14 10"/></symbol>
+    </svg>
+
+    <nav class="nav">
+      <div class="contenedor">
+        <a href="#inicio" class="logo"><img src="img/logo-nav.png" alt="InvitaLive" width="480" height="152" /></a>
+        <ul>
+          <li><a href="#esencia">Nuestra esencia</a></li>
+          <li><a href="#plantillas">Plantillas</a></li>
+          <li><a href="#planes">Planes</a></li>
+          <li><a href="#preguntas">Preguntas</a></li>
+        </ul>
+        <a class="boton boton-tinta boton-chico" data-wsp="Hola InvitaLive, quiero una invitación digital" href="#planes">Cotizar</a>
+      </div>
+    </nav>
+
+    <header class="portada" id="inicio">
+      <div class="petalos" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+      <div class="contenedor">
+        <div>
+          <span class="antetitulo entrar" style="--d:.1s">Invitaciones digitales</span>
+          <h1 class="entrar" style="--d:.25s">Para momentos que merecen <em>celebrarse</em> y recordarse</h1>
+          <p class="bajada entrar" style="--d:.45s">Diseñamos invitaciones digitales para bodas, bodas de plata, cumpleaños, bautizos y quinceañeros. Un enlace que emociona al abrirlo y que recibe las confirmaciones por ti.</p>
+          <div class="acciones entrar" style="--d:.6s">
+            <a class="boton boton-tinta" href="#planes">Ver planes y precios</a>
+            <a class="boton boton-borde" href="#plantillas">Ver plantillas</a>
+          </div>
+          <div class="confianza entrar" style="--d:.75s">
+            <span><svg><use href="#i-check"/></svg>Se comparte por WhatsApp</span>
+            <span><svg><use href="#i-check"/></svg>Confirmación online</span>
+            <span><svg><use href="#i-check"/></svg>Música y galería</span>
+          </div>
+        </div>
+
+        <div class="escena" aria-hidden="true">
+          <div class="sobre"></div>
+          <div class="lacre"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2Z"/></svg></div>
+          <div class="celular">
+            <div class="pantalla">
+              <div class="marco"></div>
+              <svg class="ramo" viewBox="0 0 80 30" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M40 26C30 16 18 12 4 14M40 26c10-10 22-14 36-12"/><path d="M14 13c2-5 7-7 10-6-1 4-5 7-10 6ZM26 11c3-5 8-6 11-4-2 4-6 6-11 4ZM66 13c-2-5-7-7-10-6 1 4 5 7 10 6ZM54 11c-3-5-8-6-11-4 2 4 6 6 11 4Z"/><circle cx="40" cy="25" r="2.4" fill="currentColor" stroke="none"/></svg>
+              <small>Nos casamos</small>
+              <div class="nombres">Ana &amp; Luis</div>
+              <div class="fecha">14 · 02 · 2027</div>
+              <div class="cuenta">
+                <div><b data-t="d">132</b><span>días</span></div>
+                <div><b data-t="h">08</b><span>hrs</span></div>
+                <div><b data-t="m">45</b><span>min</span></div>
+                <div><b data-t="s">30</b><span>seg</span></div>
+              </div>
+              <span class="confirmar">Confirmar asistencia</span>
+            </div>
+          </div>
+          <div class="tarjeta-flotante">
+            <span class="punto"><svg><use href="#i-wsp"/></svg></span>
+            <div><b>Nueva confirmación</b><span>Rosa · 2 pases</span></div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="cinta" aria-hidden="true">
+      <div class="pista">
+        <span>Bodas</span><span>Bodas de plata</span><span>Bodas de oro</span><span>50 años</span><span>Quinceañeros</span><span>Bautizos</span><span>Primera comunión</span><span>Baby shower</span><span>Graduaciones</span>
+        <span>Bodas</span><span>Bodas de plata</span><span>Bodas de oro</span><span>50 años</span><span>Quinceañeros</span><span>Bautizos</span><span>Primera comunión</span><span>Baby shower</span><span>Graduaciones</span>
+      </div>
+    </div>
+
     <main>
-      <p class="tag">Invitaciones digitales</p>
-      <h1>Invitalive</h1>
-      <div class="linea"></div>
-      <p class="frase">Para momentos que merecen<br />celebrarse y recordarse.</p>
+      <!-- ESENCIA -->
+      <section class="bloque" id="esencia">
+        <div class="contenedor esencia">
+          <div class="cita revelar">
+            <p class="frase">“La invitación es el primer recuerdo de tu celebración”</p>
+            <small>Nuestra esencia</small>
+          </div>
+          <div class="revelar">
+            <span class="antetitulo">Quiénes somos</span>
+            <h2>Diseñamos el comienzo de tus mejores recuerdos</h2>
+            <p>En InvitaLive transformamos la emoción de tu evento en una invitación que se siente, se escucha y se vive. Cuidamos cada detalle con el mismo cariño con que tú preparas el gran día.</p>
+            <p>Y cuando tus invitados la abren, nosotros nos encargamos del resto: confirmaciones, recordatorios y respuestas.</p>
+            <div class="valores">
+              <div><h3>Diseño con alma</h3><p>Colores, fotos y tipografías que cuentan tu historia.</p></div>
+              <div><h3>Hecha para el celular</h3><p>Impecable en cualquier pantalla y lista para WhatsApp.</p></div>
+              <div><h3>Una experiencia viva</h3><p>Música, animaciones, galería y cuenta regresiva.</p></div>
+              <div><h3>Cerca de ti</h3><p>Te acompañamos de principio a fin del evento.</p></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EVENTOS -->
+      <section class="bloque tono">
+        <div class="contenedor">
+          <div class="encabezado revelar">
+            <span class="antetitulo">Eventos especiales</span>
+            <h2>Una invitación para cada <em>celebración</em></h2>
+          </div>
+          <div class="eventos">
+            <div class="evento revelar">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><circle cx="15" cy="24" r="9"/><circle cx="25" cy="24" r="9"/><path d="m17 8 3-4 3 4-3 3z"/></svg>
+              <h3>Matrimonios</h3><p>Civil y religioso</p>
+            </div>
+            <div class="evento revelar">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 34s-12-7-12-16a6.5 6.5 0 0 1 12-3.5A6.5 6.5 0 0 1 32 18c0 9-12 16-12 16Z"/><path d="M15 20h10M20 15v10"/></svg>
+              <h3>Bodas de plata y oro</h3><p>25 y 50 años juntos</p>
+            </div>
+            <div class="evento revelar">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="8" y="20" width="24" height="13" rx="2"/><path d="M8 26c4 2 8-2 12 0s8 2 12 0M14 20v-5M20 20v-5M26 20v-5M14 12v-1M20 12v-1M26 12v-1"/></svg>
+              <h3>Cumpleaños</h3><p>50, 60, 70 años y más</p>
+            </div>
+            <div class="evento revelar">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="m10 16 10-9 10 9-4 18H14z"/><path d="M14 16h12"/></svg>
+              <h3>Quinceañeros</h3><p>Tu noche soñada</p>
+            </div>
+            <div class="evento revelar">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M20 6v28M12 14h16"/><path d="M8 34h24"/></svg>
+              <h3>Bautizos y comuniones</h3><p>Celebraciones de fe</p>
+            </div>
+            <div class="evento revelar">
+              <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 16 20 9l14 7-14 7z"/><path d="M12 19v7c4 3 12 3 16 0v-7M34 16v8"/></svg>
+              <h3>Graduaciones</h3><p>Y eventos corporativos</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PLANTILLAS -->
+      <section class="bloque" id="plantillas">
+        <div class="contenedor">
+          <div class="encabezado revelar">
+            <span class="antetitulo">Plantillas</span>
+            <h2>Invitaciones que ya <em>celebraron</em></h2>
+            <p>Ábrelas y vívelas como lo hicieron los invitados. Cada diseño se adapta a tu evento, tus fotos y tus colores.</p>
+          </div>
+          <div class="plantillas">
+            <a class="plantilla revelar" href="yesenia-manuel/" target="_blank" rel="noopener">
+              <div class="mini-cel"><img src="yesenia-manuel/img/galeria_7.jpeg" alt="Invitación de boda de Yesenia y Manuel" loading="lazy" /></div>
+              <span class="tipo">Boda</span><h3>Yesenia &amp; Manuel</h3><span class="ver">Ver invitación</span>
+            </a>
+            <a class="plantilla revelar" href="yanett-ambrosio/" target="_blank" rel="noopener">
+              <div class="mini-cel"><img src="yanett-ambrosio/img/IMAGEN-PORTADA.jpeg" alt="Invitación de bodas de plata de Yanett y Ambrosio" loading="lazy" /></div>
+              <span class="tipo">Bodas de plata</span><h3>Yanett &amp; Ambrosio</h3><span class="ver">Ver invitación</span>
+            </a>
+            <a class="plantilla revelar" href="henry-50/" target="_blank" rel="noopener">
+              <div class="mini-cel"><img src="henry-50/img/IMG_3.jpeg" alt="Invitación de los 50 años de Henry" loading="lazy" /></div>
+              <span class="tipo">50 años</span><h3>Los 50 de Henry</h3><span class="ver">Ver invitación</span>
+            </a>
+            <a class="plantilla revelar" href="bautizo-valentin-gabriel/" target="_blank" rel="noopener">
+              <div class="mini-cel ajustar"><img src="bautizo-valentin-gabriel/img/compartir.jpg" alt="Invitación del bautizo de Valentín y Gabriel" loading="lazy" /></div>
+              <span class="tipo">Bautizo</span><h3>Valentín &amp; Gabriel</h3><span class="ver">Ver invitación</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- PLANES -->
+      <section class="bloque tono" id="planes">
+        <div class="contenedor">
+          <div class="encabezado revelar">
+            <span class="antetitulo">Planes y precios</span>
+            <h2>Elige cómo quieres <em>invitar</em></h2>
+            <p>Pago único por evento. Tu invitación queda publicada en <strong>invitalive.pe/tu-evento</strong>, lista para compartir.</p>
+          </div>
+
+          <div class="planes">
+            <article class="plan revelar">
+              <span class="numero">Plan 01</span>
+              <h3>Básico</h3>
+              <p class="resumen">Una invitación elegante y lista para compartir.</p>
+              <div class="precio"><span class="moneda">S/</span><span class="monto">150</span></div>
+              <ul>
+                <li><svg><use href="#i-check"/></svg>Plantilla simple a elegir de nuestro catálogo</li>
+                <li><svg><use href="#i-check"/></svg>Invitación general: un mismo enlace para todos</li>
+                <li><svg><use href="#i-check"/></svg>Fecha, hora y ubicación del evento en mapa</li>
+                <li><svg><use href="#i-check"/></svg>Cuenta regresiva para el gran día</li>
+                <li><svg><use href="#i-check"/></svg>Confirmación de asistencia con redirección a WhatsApp</li>
+                <li><svg><use href="#i-check"/></svg>Vista previa con foto al compartir por WhatsApp</li>
+              </ul>
+              <a class="boton boton-borde" data-wsp="Hola InvitaLive, me interesa el plan Básico (S/ 150)" href="#">Quiero este plan</a>
+            </article>
+
+            <article class="plan revelar">
+              <span class="numero">Plan 02</span>
+              <h3>Personalizado</h3>
+              <p class="resumen">Diseñada a la medida de tu evento.</p>
+              <div class="precio"><span class="moneda">S/</span><span class="monto">300</span></div>
+              <ul>
+                <li class="base"><svg><use href="#i-check"/></svg>Todo lo del plan Básico</li>
+                <li><svg><use href="#i-check"/></svg>Diseño personalizado con tus colores, fotos y estilo</li>
+                <li><svg><use href="#i-check"/></svg>Formulario de confirmación de asistencia</li>
+                <li><svg><use href="#i-check"/></svg>Envío de correos con cada confirmación recibida</li>
+                <li><svg><use href="#i-check"/></svg>Galería de fotos</li>
+                <li><svg><use href="#i-check"/></svg>Video de tu historia o de invitación</li>
+                <li><svg><use href="#i-check"/></svg>Animaciones al abrir y recorrer la invitación</li>
+              </ul>
+              <a class="boton boton-borde" data-wsp="Hola InvitaLive, me interesa el plan Personalizado (S/ 300)" href="#">Quiero este plan</a>
+            </article>
+
+            <article class="plan destacado revelar">
+              <span class="etiqueta">Más elegido</span>
+              <span class="numero">Plan 03</span>
+              <h3>Premium</h3>
+              <p class="resumen">Una invitación única para cada invitado.</p>
+              <div class="precio"><span class="moneda">S/</span><span class="monto">400</span></div>
+              <ul>
+                <li class="base"><svg><use href="#i-check"/></svg>Todo lo del plan Personalizado</li>
+                <li><svg><use href="#i-check"/></svg>Música personalizada de fondo</li>
+                <li><svg><use href="#i-check"/></svg>Invitaciones individuales con el nombre de cada invitado</li>
+                <li><svg><use href="#i-check"/></svg>Número de pases asignados por invitado</li>
+                <li><svg><use href="#i-check"/></svg>Lista de confirmados para tu control</li>
+              </ul>
+              <a class="boton boton-tinta" data-wsp="Hola InvitaLive, me interesa el plan Premium (S/ 400)" href="#">Quiero este plan</a>
+            </article>
+
+            <article class="plan revelar">
+              <span class="numero">Plan 04</span>
+              <h3>Premium + Chatbot</h3>
+              <p class="resumen">Tu asistente que confirma y responde por ti.</p>
+              <div class="precio"><span class="moneda">S/</span><span class="monto">500</span></div>
+              <ul>
+                <li class="base"><svg><use href="#i-check"/></svg>Todo lo del plan Premium</li>
+                <li><svg><use href="#i-check"/></svg>Chatbot InvitaLive configurado para tu evento</li>
+                <li><svg><use href="#i-check"/></svg>Envía las confirmaciones por WhatsApp al número que registres</li>
+                <li><svg><use href="#i-check"/></svg>Envía un mensaje por WhatsApp a cada invitado que confirma: «Recibimos tu confirmación, ¡te esperamos!»</li>
+                <li><svg><use href="#i-check"/></svg>Responde las dudas de tus invitados dentro del chat: horario, lugar, vestimenta y más</li>
+              </ul>
+              <a class="boton boton-borde" data-wsp="Hola InvitaLive, me interesa el plan Premium + Chatbot (S/ 500)" href="#">Quiero este plan</a>
+            </article>
+          </div>
+          <p class="nota">¿Necesitas algo distinto? Escríbenos y armamos tu invitación a medida.</p>
+        </div>
+      </section>
+
+      <!-- CÓMO FUNCIONA -->
+      <section class="bloque" id="como">
+        <div class="contenedor">
+          <div class="encabezado revelar">
+            <span class="antetitulo">Cómo funciona</span>
+            <h2>De la idea a tu enlace en <em>pocos días</em></h2>
+          </div>
+          <div class="pasos">
+            <div class="paso revelar"><h3>Elige tu plan</h3><p>Escríbenos por WhatsApp con la fecha y el tipo de evento.</p></div>
+            <div class="paso revelar"><h3>Envíanos tus datos</h3><p>Nombres, fotos, lugar, horario y la música que te guste.</p></div>
+            <div class="paso revelar"><h3>Revisa el diseño</h3><p>Te mostramos la invitación y ajustamos lo que necesites.</p></div>
+            <div class="paso revelar"><h3>Comparte y celebra</h3><p>Recibe tu enlace y envíalo; las confirmaciones llegan solas.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PREGUNTAS -->
+      <section class="bloque tono" id="preguntas">
+        <div class="contenedor">
+          <div class="encabezado revelar">
+            <span class="antetitulo">Preguntas frecuentes</span>
+            <h2>Lo que suelen <em>preguntarnos</em></h2>
+          </div>
+          <div class="preguntas revelar">
+            <details>
+              <summary>¿Cómo reciben la invitación mis invitados?</summary>
+              <p>Como un enlace que puedes enviar por WhatsApp, redes sociales o correo. Al compartirlo aparece una vista previa con foto y el título de tu evento.</p>
+            </details>
+            <details>
+              <summary>¿Qué diferencia hay entre la invitación general y la individual?</summary>
+              <p>La general es un mismo enlace para todos. La individual (plan Premium) lleva el nombre de cada invitado y sus pases asignados, para que cada persona sienta que la invitación es solo para ella.</p>
+            </details>
+            <details>
+              <summary>¿Cómo funciona el chatbot?</summary>
+              <p>Configuramos un asistente de InvitaLive para tu evento. Cuando un invitado confirma, el chatbot te envía la confirmación por WhatsApp al número que registres y le envía un mensaje por WhatsApp al invitado diciéndole que recibimos su confirmación y que lo esperamos. Además, responde dentro del chat las dudas frecuentes de tus invitados.</p>
+            </details>
+            <details>
+              <summary>¿Puedo hacer cambios después de publicada?</summary>
+              <p>Sí. Si cambia un horario, un lugar o quieres agregar fotos, lo actualizamos y el mismo enlace muestra la nueva información.</p>
+            </details>
+            <details>
+              <summary>¿Con cuánta anticipación debo pedirla?</summary>
+              <p>Lo ideal es entre 4 y 6 semanas antes del evento, para que tus invitados la reciban con tiempo. Si es urgente, escríbenos y lo coordinamos.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- CIERRE -->
+      <section class="cierre bloque">
+        <div class="contenedor">
+          <div class="caja revelar">
+            <img class="logo-cierre" src="img/logo-claro.png" alt="InvitaLive · Invitaciones digitales" width="640" height="485" loading="lazy" />
+            <h2 class="titulo-cierre">Hagamos tu invitación</h2>
+            <p>Cuéntanos de tu celebración y te ayudamos a elegir el plan ideal.</p>
+            <a class="boton" data-wsp="Hola InvitaLive, quiero una invitación digital" href="#planes">
+              <svg><use href="#i-wsp"/></svg>Escríbenos por WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
+
+    <footer>
+      <div class="contenedor">
+        <a href="#inicio" class="logo logo-pie"><img src="img/logo-tinta.png" alt="InvitaLive · Invitaciones digitales" width="640" height="485" loading="lazy" /></a>
+        <p>Invitaciones digitales · invitalive.pe · © <span id="anio">2026</span></p>
+      </div>
+    </footer>
+
+    <a class="flotante" data-wsp="Hola InvitaLive, quiero una invitación digital" href="#planes" aria-label="Escríbenos por WhatsApp">
+      <svg><use href="#i-wsp"/></svg>
+    </a>
+
+    <script>
+      // Número de WhatsApp de InvitaLive: código de país (51) + número, sin espacios ni "+".
+      const WHATSAPP = '51927602272';
+
+      if (WHATSAPP) {
+        document.querySelectorAll('[data-wsp]').forEach((enlace) => {
+          enlace.href = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(enlace.dataset.wsp);
+          enlace.target = '_blank';
+          enlace.rel = 'noopener';
+        });
+      } else {
+        document.querySelectorAll('.plan [data-wsp]').forEach((enlace) => { enlace.href = '#como'; });
+      }
+
+      document.getElementById('anio').textContent = new Date().getFullYear();
+
+      // Cuenta regresiva del celular de ejemplo
+      const meta = new Date('2027-02-14T16:00:00-05:00').getTime();
+      const casillas = document.querySelectorAll('.cuenta b[data-t]');
+      function contar() {
+        let r = Math.max(0, Math.floor((meta - Date.now()) / 1000));
+        const v = { d: Math.floor(r / 86400), h: Math.floor(r % 86400 / 3600), m: Math.floor(r % 3600 / 60), s: r % 60 };
+        casillas.forEach((b) => {
+          const t = String(v[b.dataset.t]).padStart(2, '0');
+          if (b.textContent !== t) { b.textContent = t; b.classList.remove('cambio'); void b.offsetWidth; b.classList.add('cambio'); }
+        });
+      }
+      contar();
+      setInterval(contar, 1000);
+
+      // Aparición escalonada al hacer scroll
+      document.querySelectorAll('.revelar').forEach((el) => {
+        const hermanos = [...el.parentElement.children].filter((h) => h.classList.contains('revelar'));
+        const i = hermanos.indexOf(el);
+        if (i > 0) el.style.transitionDelay = (i * 0.1) + 's';
+        el.addEventListener('transitionend', () => { el.style.transitionDelay = ''; }, { once: true });
+      });
+
+      const elementos = document.querySelectorAll('.revelar');
+      if ('IntersectionObserver' in window) {
+        const observador = new IntersectionObserver((entradas) => {
+          entradas.forEach((e) => {
+            if (e.isIntersecting) { e.target.classList.add('visible'); observador.unobserve(e.target); }
+          });
+        }, { threshold: 0.12 });
+        elementos.forEach((el) => observador.observe(el));
+      } else {
+        elementos.forEach((el) => el.classList.add('visible'));
+      }
+    </script>
   </body>
 </html>
