@@ -265,6 +265,33 @@
       .plan.destacado .boton { background: var(--champan); color: var(--tinta); box-shadow: none; }
       .nota { text-align: center; color: var(--tinta-suave); font-size: .9rem; margin-top: 30px; }
 
+      /* Beneficios */
+      .beneficios { display: grid; gap: 22px; grid-template-columns: 1fr; margin-bottom: 64px; }
+      @media (min-width: 860px) { .beneficios { grid-template-columns: repeat(3, 1fr); } }
+      .beneficio { padding: 32px 28px; background: var(--blanco); border: 1px solid var(--linea); border-radius: 18px; }
+      .beneficio .icono { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; margin-bottom: 18px; background: rgba(201, 139, 123, .12); color: var(--rosa-texto); }
+      .beneficio .icono svg { width: 24px; height: 24px; }
+      .beneficio h3 { font-family: var(--titulo); font-weight: 500; font-size: 1.4rem; line-height: 1.2; margin-bottom: 8px; }
+      .beneficio p { color: var(--tinta-suave); font-size: .97rem; }
+      .beneficio .dominio { display: inline-block; margin-top: 14px; padding: 6px 14px; border-radius: 999px; background: var(--papel-2); font-weight: 500; font-size: .92rem; }
+
+      .linea-tiempo { position: relative; display: grid; gap: 0; grid-template-columns: 1fr; max-width: 980px; margin: 0 auto; }
+      .linea-tiempo h3.titulo-lt { text-align: center; font-family: var(--titulo); font-weight: 500; font-size: 1.5rem; margin-bottom: 30px; }
+      .hitos { position: relative; display: grid; grid-template-columns: 1fr; gap: 26px; list-style: none; padding-left: 34px; }
+      .hitos::before { content: ''; position: absolute; left: 11px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(var(--rosa-claro), var(--rosa), var(--rosa-claro)); }
+      .hito { position: relative; }
+      .hito::before { content: ''; position: absolute; left: -30px; top: 5px; width: 16px; height: 16px; border-radius: 50%; background: var(--blanco); border: 2px solid var(--rosa); }
+      .hito.fiesta::before { background: var(--rosa); box-shadow: 0 0 0 6px rgba(201, 139, 123, .2); }
+      .hito .cuando { font-size: .74rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--rosa-texto); }
+      .hito h4 { font-family: var(--titulo); font-weight: 500; font-size: 1.2rem; line-height: 1.25; margin: 2px 0 4px; }
+      .hito p { font-size: .92rem; color: var(--tinta-suave); }
+      @media (min-width: 860px) {
+        .hitos { grid-template-columns: repeat(4, 1fr); gap: 24px; padding-left: 0; padding-top: 34px; text-align: center; }
+        .hitos::before { left: 12%; right: 12%; top: 7px; bottom: auto; width: auto; height: 2px; background: linear-gradient(90deg, var(--rosa-claro), var(--rosa), var(--rosa-claro)); }
+        .hito::before { left: 50%; top: -34px; transform: translateX(-50%); }
+      }
+      .aviso-lt { text-align: center; margin-top: 30px; font-size: .92rem; color: var(--tinta-suave); }
+
       /* Pasos */
       .pasos { display: grid; gap: 30px; grid-template-columns: 1fr; counter-reset: paso; }
       @media (min-width: 780px) { .pasos { grid-template-columns: repeat(4, 1fr); } }
@@ -400,6 +427,7 @@
           <li><a href="#esencia">Nuestra esencia</a></li>
           <li><a href="#plantillas">Plantillas</a></li>
           <li><a href="#planes">Planes</a></li>
+          <li><a href="#beneficios">Beneficios</a></li>
           <li><a href="#preguntas">Preguntas</a></li>
         </ul>
         <a class="boton boton-tinta boton-chico" data-wsp="Hola InvitaLive, quiero una invitación digital" href="#planes">Cotizar</a>
@@ -601,6 +629,7 @@
                 <li><svg><use href="#i-check"/></svg>Invitaciones individuales con el nombre de cada invitado</li>
                 <li><svg><use href="#i-check"/></svg>Número de pases asignados por invitado</li>
                 <li><svg><use href="#i-check"/></svg>Lista de confirmados para tu control</li>
+                <li><svg><use href="#i-check"/></svg>Recordatorio a todos tus invitados unos días antes del evento</li>
               </ul>
               <a class="boton boton-tinta" data-wsp="Hola InvitaLive, me interesa el plan Premium (S/ 400)" href="#">Quiero este plan</a>
             </article>
@@ -620,28 +649,68 @@
               <a class="boton boton-borde" data-wsp="Hola InvitaLive, me interesa el plan Premium + Chatbot (S/ 500)" href="#">Quiero este plan</a>
             </article>
           </div>
-          <p class="nota">¿Necesitas algo distinto? Escríbenos y armamos tu invitación a medida.</p>
+          <p class="nota">Entrega en 7 a 15 días según el plan, contados desde que recibimos toda tu información (fotos, videos y textos). ¿La necesitas antes? Lo coordinamos como entrega urgente con un costo adicional.<br />¿Necesitas algo distinto? Escríbenos y armamos tu invitación a medida.</p>
+        </div>
+      </section>
+
+      <!-- BENEFICIOS -->
+      <section class="bloque" id="beneficios">
+        <div class="contenedor">
+          <div class="encabezado revelar">
+            <span class="antetitulo">Beneficios</span>
+            <h2>Tu invitación con <em>dominio propio</em></h2>
+            <p>Todas nuestras invitaciones se publican en invitalive.pe: un enlace corto, seguro y fácil de compartir.</p>
+          </div>
+          <div class="beneficios">
+            <article class="beneficio revelar">
+              <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+              <h3>Tu propia dirección web</h3>
+              <p>Tu evento tiene su enlace personalizado con el nombre que elijas, con conexión segura y su vista previa al compartir por WhatsApp.</p>
+              <span class="dominio">invitalive.pe/tu-evento</span>
+            </article>
+            <article class="beneficio revelar">
+              <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg></div>
+              <h3>Publicada con tiempo</h3>
+              <p>Apenas realizas el pago empezamos a trabajar, y tu invitación puede estar publicada hasta <strong>3 meses antes</strong> de tu evento. ¿Necesitas más tiempo? Lo coordinamos contigo.</p>
+            </article>
+            <article class="beneficio revelar">
+              <div class="icono"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2Z"/></svg></div>
+              <h3>Un mes más para recordar</h3>
+              <p>Después del evento tu invitación sigue publicada <strong>un mes</strong>, para que tus invitados vuelvan a verla. Luego la retiramos para cuidar tu privacidad.</p>
+            </article>
+          </div>
+
+          <div class="linea-tiempo revelar">
+            <h3 class="titulo-lt">Así vive tu invitación</h3>
+            <ol class="hitos">
+              <li class="hito"><span class="cuando">Al pagar</span><h4>Empezamos tu diseño</h4><p>Reservamos tu enlace. Con tus fotos, videos y textos completos, la entregamos en 7 a 15 días.</p></li>
+              <li class="hito"><span class="cuando">Hasta 3 meses antes</span><h4>Publicada y lista</h4><p>La compartes y recibes las confirmaciones.</p></li>
+              <li class="hito fiesta"><span class="cuando">El gran día</span><h4>¡A celebrar!</h4><p>Tus invitados llegan con toda la información a la mano.</p></li>
+              <li class="hito"><span class="cuando">1 mes después</span><h4>Se retira</h4><p>Tras un mes de recuerdos, la invitación deja de estar publicada.</p></li>
+            </ol>
+            <p class="aviso-lt">¿Quieres publicarla con más de 3 meses de anticipación? Escríbenos y lo coordinamos.</p>
+          </div>
         </div>
       </section>
 
       <!-- CÓMO FUNCIONA -->
-      <section class="bloque" id="como">
+      <section class="bloque tono" id="como">
         <div class="contenedor">
           <div class="encabezado revelar">
             <span class="antetitulo">Cómo funciona</span>
-            <h2>De la idea a tu enlace en <em>pocos días</em></h2>
+            <h2>De la idea a tu enlace en <em>7 a 15 días</em></h2>
           </div>
           <div class="pasos">
             <div class="paso revelar"><h3>Elige tu plan</h3><p>Escríbenos por WhatsApp con la fecha y el tipo de evento.</p></div>
-            <div class="paso revelar"><h3>Envíanos tus datos</h3><p>Nombres, fotos, lugar, horario y la música que te guste.</p></div>
-            <div class="paso revelar"><h3>Revisa el diseño</h3><p>Te mostramos la invitación y ajustamos lo que necesites.</p></div>
+            <div class="paso revelar"><h3>Envíanos tus datos</h3><p>Nombres, fotos, videos, textos, lugar, horario y la música que te guste. Con todo completo empieza a contar el plazo.</p></div>
+            <div class="paso revelar"><h3>Revisa el diseño</h3><p>En 7 a 15 días te mostramos la invitación y ajustamos lo que necesites.</p></div>
             <div class="paso revelar"><h3>Comparte y celebra</h3><p>Recibe tu enlace y envíalo; las confirmaciones llegan solas.</p></div>
           </div>
         </div>
       </section>
 
       <!-- PREGUNTAS -->
-      <section class="bloque tono" id="preguntas">
+      <section class="bloque" id="preguntas">
         <div class="contenedor">
           <div class="encabezado revelar">
             <span class="antetitulo">Preguntas frecuentes</span>
@@ -661,12 +730,16 @@
               <p>Configuramos un asistente de InvitaLive para tu evento. Cuando un invitado confirma, el chatbot te envía la confirmación por WhatsApp al número que registres y le envía un mensaje por WhatsApp al invitado diciéndole que recibimos su confirmación y que lo esperamos. Además, responde dentro del chat las dudas frecuentes de tus invitados.</p>
             </details>
             <details>
+              <summary>¿Cuánto tiempo estará publicada mi invitación?</summary>
+              <p>Desde que realizas el pago, tu invitación puede estar publicada hasta 3 meses antes de tu evento (si necesitas más tiempo, lo coordinamos). Después del evento queda disponible un mes más y luego se retira.</p>
+            </details>
+            <details>
               <summary>¿Puedo hacer cambios después de publicada?</summary>
               <p>Sí. Si cambia un horario, un lugar o quieres agregar fotos, lo actualizamos y el mismo enlace muestra la nueva información.</p>
             </details>
             <details>
               <summary>¿Con cuánta anticipación debo pedirla?</summary>
-              <p>Lo ideal es entre 4 y 6 semanas antes del evento, para que tus invitados la reciban con tiempo. Si es urgente, escríbenos y lo coordinamos.</p>
+              <p>La entrega de tu invitación demora entre <strong>7 y 15 días</strong>, según el plan elegido y la complejidad del diseño. Los días se cuentan desde que tenemos toda tu información completa: fotos, videos y textos. Te recomendamos pedirla con anticipación para que tus invitados la reciban con tiempo. Si la necesitas en menos días, también lo coordinamos como entrega urgente, con un costo adicional.</p>
             </details>
           </div>
         </div>
